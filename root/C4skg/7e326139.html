@@ -1,0 +1,285 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>网页渲染md美化指南 | C4skg's blog</title><meta name="author" content="C4skg"><meta name="copyright" content="C4skg"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="需求和前提   在开发独立的可视化工具时，遇到的一个问题，本地写好的 markdown 文档渲染到浏览器页面完全没有美感可言。且美化过程费事费力还费神，因此通过这篇文章来记录和总结网页端渲染 markdown 的美化问题。   本篇文章只总结了具体的美化和中途可能遇到的一些问题的总结，markdown 转 html 的过程不重复。   美化过程中所用的第三方库如下   highlight.js 用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网页渲染md美化指南">
+<meta property="og:url" content="https://c4skg.top/C4skg/7e326139.html">
+<meta property="og:site_name" content="C4skg&#39;s blog">
+<meta property="og:description" content="需求和前提   在开发独立的可视化工具时，遇到的一个问题，本地写好的 markdown 文档渲染到浏览器页面完全没有美感可言。且美化过程费事费力还费神，因此通过这篇文章来记录和总结网页端渲染 markdown 的美化问题。   本篇文章只总结了具体的美化和中途可能遇到的一些问题的总结，markdown 转 html 的过程不重复。   美化过程中所用的第三方库如下   highlight.js 用">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://static.c4skg.top/c4skg/banner.jpg">
+<meta property="article:published_time" content="2023-02-02T12:21:35.000Z">
+<meta property="article:modified_time" content="2023-03-10T06:49:36.000Z">
+<meta property="article:author" content="C4skg">
+<meta property="article:tag" content="Web">
+<meta property="article:tag" content="Github">
+<meta property="article:tag" content="markdown">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://static.c4skg.top/c4skg/banner.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://c4skg.top/C4skg/7e326139.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: {"appId":"5FG3MYF8M4","apiKey":"aa348bf5265a6239b68963e9ef01934e","indexName":"Hexo","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '网页渲染md美化指南',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-03-10 14:49:36'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = url => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      link.onload = () => resolve()
+      link.onerror = () => reject()
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/universe.css"><meta name="generator" content="Hexo 5.4.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://static.c4skg.top/c4skg/logo.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">25</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://static.c4skg.top/c4skg/banner.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="C4skg's blog"><img class="site-icon" src="https://static.c4skg.top/c4skg/name.png"/><span class="site-name">C4skg's blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">网页渲染md美化指南</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-02-02T12:21:35.000Z" title="发表于 2023-02-02 20:21:35">2023-02-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-03-10T06:49:36.000Z" title="更新于 2023-03-10 14:49:36">2023-03-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8C%87%E5%8D%97/">指南</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="网页渲染md美化指南"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="需求和前提">需求和前提</h2>
+<ol>
+<li>
+<p>在开发独立的可视化工具时，遇到的一个问题，本地写好的 <code>markdown</code> 文档渲染到浏览器页面完全没有美感可言。且美化过程费事费力还费神，因此通过这篇文章来记录和总结网页端渲染 <code>markdown</code> 的美化问题。</p>
+</li>
+<li>
+<p>本篇文章只总结了具体的美化和中途可能遇到的一些问题的总结，<code>markdown</code> 转 <code>html</code> 的过程不重复。</p>
+</li>
+<li>
+<p>美化过程中所用的第三方库如下</p>
+<ul>
+<li>
+<p><code>highlight.js</code></p>
+<p>用于实现代码块高亮</p>
+</li>
+</ul>
+<a class="ghcard" rel="external nofollow noopener noreferrer noopener" target="_blank" href="https://github.com/highlightjs/highlight.js"><img src="https://github-readme-stats.vercel.app/api/pin/?username=highlightjs&repo=highlight.js&theme=buefy&show_owner=true"/></a> 
+<ul>
+<li>
+<p><code>highlightjs-line-numbers.js</code></p>
+<p>用于实现代码块左侧行数的显示</p>
+</li>
+</ul>
+<a class="ghcard" rel="external nofollow noopener noreferrer noopener" target="_blank" href="https://github.com/wcoder/highlightjs-line-numbers.js"><img src="https://github-readme-stats.vercel.app/api/pin/?username=wcoder&repo=highlightjs-line-numbers.js&theme=buefy&show_owner=true"/></a> 
+<ul>
+<li>
+<p><code>KaTeX.js</code></p>
+<p>用于渲染数学公式</p>
+</li>
+</ul>
+<a class="ghcard" rel="external nofollow noopener noreferrer noopener" target="_blank" href="https://github.com/KaTeX/KaTeX"><img src="https://github-readme-stats.vercel.app/api/pin/?username=KaTeX&repo=KaTeX&theme=buefy&show_owner=true"/></a>
+</li>
+</ol>
+<h2 id="具体美化过程">具体美化过程</h2>
+<h3 id="美化前样式预览">美化前样式预览</h3>
+<img src="/C4skg/7e326139/image-20230203101754063.png" class="" title="image-20230203102026646">
+<h3 id="代码高亮实现及优化">代码高亮实现及优化</h3>
+<ol>
+<li>
+<p>下载并使用<code>highlight.js</code> 库进行代码高亮</p>
+<p>进入官网下载静态编译版，并可以根据需求自行选择需要高亮的语言下载。</p>
+ <div class="tag link"><a class="link-card" title="highlight.js 官网" target="_blank" rel="noopener" href="https://highlightjs.org/download/"><div class="left"><img src="https://static.c4skg.top/icon/sqrt2.png"/></div><div class="right"><p class="text">highlight.js 官网</p><p class="url">https://highlightjs.org/download/</p></div></a></div>
+<p>下载完成后解压即可。</p>
+<p>本地使用 <code>highlight.js</code> 需要引入改目录中的文件，一个是<code>样式</code>文件，一个是<code>js</code> 文件，引入并激活可以使用如下命令</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--若想更换代码块主题，通过修改css文件即可--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;./highlight/styles/github-dark.min.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./highlight/highlight.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">   <span class="comment">//hljs 会自动接管 pre&gt;code 标签下的代码块并进行高亮</span></span></span><br><span class="line"><span class="language-javascript">   hljs.<span class="title function_">highlightAll</span>();</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span> --&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>若代码块没有被识别并高亮，可以通过添加 <code>class</code> 属性来自行指定语言进行高亮</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;language-html&quot;</span>&gt;</span>.....<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;language-python&quot;</span>&gt;</span>.....<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>不希望高亮的代码块也可通过添加 <code>class</code> 属性来指定不进行高亮</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;nohighlight&quot;</span>&gt;</span>.....<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>高亮效果</p>
+<img src="/C4skg/7e326139/image-20230203104613138.png" class="" title="image-20230203104613138">
+</li>
+<li>
+<p><code>highlight.js</code> 并没有自动高亮 <code>&lt;code&gt;</code> 标签的功能，也就是无法高亮 <code>markdown中的</code>行内代码块，因此这里通过自行定义 <code>css</code> 的方法实现行内代码块的高亮</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">code</span>&#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">27</span>, <span class="number">31</span>, <span class="number">35</span>, .<span class="number">05</span>);</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0.1em</span> <span class="number">0.4em</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">85%</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">3px</span>;</span><br><span class="line">    <span class="attribute">background-size</span>: <span class="number">20px</span> <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">white-space</span>: pre;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>字体优化建议</p>
+<p>这里推荐一种字体，使得代码块看上去更加舒适。这种方式若使得 <code>Font-Awsome</code>、<code>KaTe.js</code> 等字体库渲染出现乱码，可通过仅添加于 <code>pre</code> 和 <code>code</code> 标签中来避免渲染乱码</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*这里采用最保险方式*/</span></span><br><span class="line">pre&#123;</span><br><span class="line">	<span class="attribute">font-family</span>: mononoki, Consolas, <span class="string">&quot;Liberation Mono&quot;</span>, Menlo, Courier, monospace, <span class="string">&quot;Apple Color Emoji&quot;</span>, <span class="string">&quot;Segoe UI Emoji&quot;</span>, <span class="string">&quot;Noto Color Emoji&quot;</span>, <span class="string">&quot;Segoe UI Symbol&quot;</span>, <span class="string">&quot;Android Emoji&quot;</span>, <span class="string">&quot;EmojiSymbols&quot;</span>;	</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">code</span>&#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">27</span>, <span class="number">31</span>, <span class="number">35</span>, .<span class="number">05</span>);</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0.1em</span> <span class="number">0.4em</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">85%</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">3px</span>;</span><br><span class="line">    <span class="attribute">background-size</span>: <span class="number">20px</span> <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">white-space</span>: pre;</span><br><span class="line">    <span class="attribute">font-family</span>: mononoki, Consolas, <span class="string">&quot;Liberation Mono&quot;</span>, Menlo, Courier, monospace, <span class="string">&quot;Apple Color Emoji&quot;</span>, <span class="string">&quot;Segoe UI Emoji&quot;</span>, <span class="string">&quot;Noto Color Emoji&quot;</span>, <span class="string">&quot;Segoe UI Symbol&quot;</span>, <span class="string">&quot;Android Emoji&quot;</span>, <span class="string">&quot;EmojiSymbols&quot;</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>代码块默认滚动条样式修改</p>
+<p>若代码过长，代码块会出现滚动条用于滚动，浏览器默认的滚动条不够美观，这里提供优化后的滚动条代码</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">pre <span class="selector-tag">code</span>::-webkit-scrollbar&#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line">pre <span class="selector-tag">code</span>::-webkit-scrollbar-thumb&#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">8px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#d1d5da</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>最后效果</p>
+<img src="/C4skg/7e326139/image-20230203110258492.png" class="" title="image-20230203110258492">
+</li>
+</ol>
+<h3 id="代码块显示行号及优化">代码块显示行号及优化</h3>
+<ol>
+<li>
+<p>下载并使用 <code>highlightjs-line-numbers.js</code> 进行代码块左侧行号的显示</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/wcoder/highlightjs-line-numbers.js.git</span><br><span class="line"></span><br><span class="line"><span class="comment">#或手动下载压缩包</span></span><br></pre></td></tr></table></figure>
+<p>下载完成后引入<code>js</code> 文件即可，这里采用纯静态引用，因此引用目录中的 <code>dist</code> 目录下的文件即可</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./highlightjs-line-numbers.js-master/dist/highlightjs-line-numbers.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">	<span class="comment">//开启行号显示</span></span></span><br><span class="line"><span class="language-javascript">    hljs.<span class="property">initLineNumbersOnLoad</span> (&#123; <span class="attr">singleLine</span>:<span class="literal">true</span> &#125;);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>代码高亮颜色影响修复</p>
+<p>直接开启行号显示后，默认的行号显示不够美观，且会使得代码块中的某些文字无法高亮，甚至看不清，这是因为行号显示插件在 <code>pre&gt;code</code> 标签中又加了一层 <code>table</code> 和 <code>tbody</code> 标签来辅助显示行号，更利于排版，但是 <code>table</code> 标签的默认 <code>css</code> 中设置了颜色，覆盖了代码高亮的设置，因此可以通过手动添加 <code>css</code> 方法来避免问题。</p>
+<p>通过将所有被其影响的属性再次进行覆盖，让他们继承他们的父级标签的属性值即可。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">table</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: inherit;</span><br><span class="line">    <span class="attribute">white-space</span>: inherit;</span><br><span class="line">    <span class="attribute">font-size</span>: inherit;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">tbody</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: inherit;</span><br><span class="line">    <span class="attribute">white-space</span>: inherit;</span><br><span class="line">    <span class="attribute">font-size</span>: inherit;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>​</p>
+<ol start="3">
+<li>
+<p>默认行号显示优化</p>
+<p>默认行号的显示和代码紧凑在一起，不太美观，这里通过自定义 <code>css</code> 的形式进行改善</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.hljs-ln-numbers</span>&#123;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#ccc</span>;</span><br><span class="line">    <span class="attribute">border-right</span>: <span class="number">1px</span> solid <span class="number">#ccc</span>;</span><br><span class="line">    <span class="attribute">vertical-align</span>: top;</span><br><span class="line">    -webkit-touch-callout: none;</span><br><span class="line">    -webkit-user-select: none;</span><br><span class="line">    -khtml-user-select: none;</span><br><span class="line">    -moz-user-select: none;</span><br><span class="line">    -ms-user-select: none;</span><br><span class="line">    user-select: none;</span><br><span class="line">    <span class="attribute">padding-right</span>: <span class="number">10px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">white-space</span>: pre;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">margin-right</span>: .<span class="number">2em</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>效果如下</p>
+<img src="/C4skg/7e326139/image-20230203111920746.png" class="" title="image-20230203111920746">
+</li>
+</ol>
+<h3 id="数学公式渲染">数学公式渲染</h3>
+<ol>
+<li>
+<p>通过 <code>KaTeX.js</code> 进行渲染</p>
+<p>通过链接下载编译好的静态版本中的 <code>zip</code> 包</p>
+<div class="tag link"><a class="link-card" title="KaTeX.zip" target="_blank" rel="noopener" href="https://github.com/KaTeX/KaTeX/releases/tag/v0.16.4"><div class="left"><img src="https://static.c4skg.top/icon/sqrt2.png"/></div><div class="right"><p class="text">KaTeX.zip</p><p class="url">https://github.com/KaTeX/KaTeX/releases/tag/v0.16.4</p></div></a></div>
+<p>解压后通过代码引入 <code>KaTeX.js</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;./katex/katex.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./katex/katex.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./katex/contrib/auto-render.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--配置--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">   <span class="comment">//KaTeX.js   </span></span></span><br><span class="line"><span class="language-javascript">   <span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;DOMContentLoaded&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;  </span></span><br><span class="line"><span class="language-javascript">        <span class="title function_">renderMathInElement</span>(<span class="variable language_">document</span>.<span class="property">body</span>, &#123;  </span></span><br><span class="line"><span class="language-javascript">          <span class="attr">delimiters</span>: [  </span></span><br><span class="line"><span class="language-javascript">            &#123;<span class="attr">left</span>: <span class="string">&quot;$$&quot;</span>, <span class="attr">right</span>: <span class="string">&quot;$$&quot;</span>, <span class="attr">display</span>: <span class="literal">true</span>&#125;,</span></span><br><span class="line"><span class="language-javascript">            &#123;<span class="attr">left</span>: <span class="string">&quot;\\(&quot;</span>, <span class="attr">right</span>: <span class="string">&quot;\\)&quot;</span>, <span class="attr">display</span>: <span class="literal">false</span>&#125;,</span></span><br><span class="line"><span class="language-javascript">            &#123;<span class="attr">left</span>: <span class="string">&quot;\\begin&#123;equation&#125;&quot;</span>, <span class="attr">right</span>: <span class="string">&quot;\\end&#123;equation&#125;&quot;</span>, <span class="attr">display</span>: <span class="literal">true</span>&#125;,</span></span><br><span class="line"><span class="language-javascript">            &#123;<span class="attr">left</span>: <span class="string">&quot;\\begin&#123;align&#125;&quot;</span>, <span class="attr">right</span>: <span class="string">&quot;\\end&#123;align&#125;&quot;</span>, <span class="attr">display</span>: <span class="literal">true</span>&#125;,</span></span><br><span class="line"><span class="language-javascript">            &#123;<span class="attr">left</span>: <span class="string">&quot;\\begin&#123;alignat&#125;&quot;</span>, <span class="attr">right</span>: <span class="string">&quot;\\end&#123;alignat&#125;&quot;</span>, <span class="attr">display</span>: <span class="literal">true</span>&#125;,</span></span><br><span class="line"><span class="language-javascript">            &#123;<span class="attr">left</span>: <span class="string">&quot;\\begin&#123;gather&#125;&quot;</span>, <span class="attr">right</span>: <span class="string">&quot;\\end&#123;gather&#125;&quot;</span>, <span class="attr">display</span>: <span class="literal">true</span>&#125;,</span></span><br><span class="line"><span class="language-javascript">            &#123;<span class="attr">left</span>: <span class="string">&quot;\\begin&#123;CD&#125;&quot;</span>, <span class="attr">right</span>: <span class="string">&quot;\\end&#123;CD&#125;&quot;</span>, <span class="attr">display</span>: <span class="literal">true</span>&#125;,</span></span><br><span class="line"><span class="language-javascript">            &#123;<span class="attr">left</span>: <span class="string">&quot;\\[&quot;</span>, <span class="attr">right</span>: <span class="string">&quot;\\]&quot;</span>, <span class="attr">display</span>: <span class="literal">true</span>&#125;</span></span><br><span class="line"><span class="language-javascript">          ],  </span></span><br><span class="line"><span class="language-javascript">          throwOnError : <span class="literal">false</span>  </span></span><br><span class="line"><span class="language-javascript">        &#125;);  </span></span><br><span class="line"><span class="language-javascript">    &#125;);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>​</p>
+<ol start="2">
+<li>
+<p>自定义渲染</p>
+<p><code>markdown</code> 渲染后的 <code>html</code> 会将数学公式放入 <code>div</code> 标签中，具体表现形式为</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;language-math&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>因此我们可以通过编写 <code>js</code> 代码来实现在载入后，获取此标签中的内容，放入<code>KaTeX.js</code> 中进行渲染后替换即可。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">onload</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line"> 	</span><br><span class="line">    <span class="comment">// js 获取的网页内容有时候会被转换为实体符号，因此需要通过转换来避免 KaTeX 报错   </span></span><br><span class="line">    <span class="keyword">var</span> <span class="title function_">htmlDecode</span> = (<span class="params">encode</span>)=&gt;&#123;</span><br><span class="line">        <span class="keyword">var</span> s = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">if</span> (encode.<span class="property">length</span> === <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        s = encode.<span class="title function_">replace</span>(<span class="regexp">/&amp;amp;/g</span>, <span class="string">&quot;&amp;&quot;</span>);</span><br><span class="line">        s = s.<span class="title function_">replace</span>(<span class="regexp">/&amp;lt;/g</span>, <span class="string">&quot;&lt;&quot;</span>);</span><br><span class="line">        s = s.<span class="title function_">replace</span>(<span class="regexp">/&amp;gt;/g</span>, <span class="string">&quot;&gt;&quot;</span>);</span><br><span class="line">        s = s.<span class="title function_">replace</span>(<span class="regexp">/&amp;nbsp;/g</span>, <span class="string">&quot; &quot;</span>);</span><br><span class="line">        s = s.<span class="title function_">replace</span>(<span class="regexp">/&#x27;/g</span>, <span class="string">&quot;\&#x27;&quot;</span>);</span><br><span class="line">        s = s.<span class="title function_">replace</span>(<span class="regexp">/&amp;quot;/g</span>, <span class="string">&quot;\&quot;&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> mathObj = <span class="variable language_">document</span>.<span class="title function_">getElementsByClassName</span>(<span class="string">&#x27;language-math&#x27;</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> element <span class="keyword">of</span> mathObj)&#123;</span><br><span class="line">        <span class="keyword">let</span> render = <span class="title function_">htmlDecode</span>(element.<span class="property">innerHTML</span>);</span><br><span class="line">        katex.<span class="title function_">render</span>(render,element)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>渲染效果</p>
+<img src="/C4skg/7e326139/image-20230203114915258.png" class="" title="image-20230203114915258"></li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://c4skg.top">C4skg</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://c4skg.top/C4skg/7e326139.html">https://c4skg.top/C4skg/7e326139.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://c4skg.top" target="_blank">C4skg's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Web/">Web</a><a class="post-meta__tags" href="/tags/Github/">Github</a><a class="post-meta__tags" href="/tags/markdown/">markdown</a></div><div class="post_share"><div class="social-share" data-image="https://static.c4skg.top/c4skg/banner.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/C4skg/34bb0543.html" title="2023LitCTF-WP"><img class="cover" src="https://static.c4skg.top/c4skg/banner.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">2023LitCTF-WP</div></div></a></div><div class="next-post pull-right"><a href="/C4skg/201698b1.html" title="博主GitHub开源项目推荐"><img class="cover" src="https://static.c4skg.top/c4skg/banner.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">博主GitHub开源项目推荐</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/C4skg/f5795ee1.html" title="Web Sql注入绕过"><img class="cover" src="https://static.c4skg.top/c4skg/banner.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-16</div><div class="title">Web Sql注入绕过</div></div></a></div><div><a href="/C4skg/ee619de3.html" title="Web信息收集"><img class="cover" src="https://static.c4skg.top/c4skg/banner.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-16</div><div class="title">Web信息收集</div></div></a></div><div><a href="/C4skg/201698b1.html" title="博主GitHub开源项目推荐"><img class="cover" src="https://static.c4skg.top/c4skg/banner.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-02</div><div class="title">博主GitHub开源项目推荐</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://static.c4skg.top/c4skg/logo.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">C4skg</div><div class="author-info__description">Sidere mens eadem mutato<br>繁星纵变，智慧永恒</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">25</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/C4skg"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">所有问题请发邮件至 C4skg@qq.com</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9C%80%E6%B1%82%E5%92%8C%E5%89%8D%E6%8F%90"><span class="toc-number">1.</span> <span class="toc-text">需求和前提</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E7%BE%8E%E5%8C%96%E8%BF%87%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">具体美化过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BE%8E%E5%8C%96%E5%89%8D%E6%A0%B7%E5%BC%8F%E9%A2%84%E8%A7%88"><span class="toc-number">2.1.</span> <span class="toc-text">美化前样式预览</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE%E5%AE%9E%E7%8E%B0%E5%8F%8A%E4%BC%98%E5%8C%96"><span class="toc-number">2.2.</span> <span class="toc-text">代码高亮实现及优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97%E6%98%BE%E7%A4%BA%E8%A1%8C%E5%8F%B7%E5%8F%8A%E4%BC%98%E5%8C%96"><span class="toc-number">2.3.</span> <span class="toc-text">代码块显示行号及优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E6%B8%B2%E6%9F%93"><span class="toc-number">2.4.</span> <span class="toc-text">数学公式渲染</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/C4skg/d33e7953.html" title="NSSCTF RoundNSS#13 - flask?jwt?正确姿势">NSSCTF RoundNSS#13 - flask?jwt?正确姿势</a><time datetime="2023-06-04T09:17:02.000Z" title="发表于 2023-06-04 17:17:02">2023-06-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/C4skg/4fd9b10f.html" title="2023年第三届陕西省大学生网络安全技能大赛">2023年第三届陕西省大学生网络安全技能大赛</a><time datetime="2023-06-03T09:49:31.000Z" title="发表于 2023-06-03 17:49:31">2023-06-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/C4skg/34bb0543.html" title="2023LitCTF-WP">2023LitCTF-WP</a><time datetime="2023-05-15T14:53:05.000Z" title="发表于 2023-05-15 22:53:05">2023-05-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/C4skg/7e326139.html" title="网页渲染md美化指南">网页渲染md美化指南</a><time datetime="2023-02-02T12:21:35.000Z" title="发表于 2023-02-02 20:21:35">2023-02-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/C4skg/201698b1.html" title="博主GitHub开源项目推荐">博主GitHub开源项目推荐</a><time datetime="2023-02-02T11:46:26.000Z" title="发表于 2023-02-02 19:46:26">2023-02-02</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By C4skg</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn"><span>浙ICP备2022018709号-1</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js"></script><div class="js-pjax"></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

