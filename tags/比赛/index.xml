@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>比赛 - 标签 - C4skg&#39;s Blog</title>
+    <link>//localhost:1313/tags/%E6%AF%94%E8%B5%9B/</link>
+    <description>比赛 - 标签 | C4skg&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 05 May 2024 19:29:38 &#43;0800</lastBuildDate><atom:link href="//localhost:1313/tags/%E6%AF%94%E8%B5%9B/" rel="self" type="application/rss+xml" /><item>
+  <title>2023年第三届陕西省大学生网络安全技能大赛WP</title>
+  <link>//localhost:1313/posts/edebc43/</link>
+  <pubDate>Sun, 05 May 2024 19:29:38 &#43;0800</pubDate>
+  <author>作者</author>
+  <guid>//localhost:1313/posts/edebc43/</guid>
+  <description><![CDATA[1 排名 2 解题思路 2.1 WEB 2.1.1 easyrce过滤了一些东西，用 file 伪协议即可 http://1d99bce9.clsadp.com/?PK=file:/]]></description>
+</item>
+</channel>
+</rss>
