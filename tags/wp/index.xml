@@ -1,30 +1,38 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>WP - 标签 - C4skg&#39;s Blog</title>
-    <link>//localhost:1313/tags/wp/</link>
+    <link>/tags/wp/</link>
     <description>WP - 标签 | C4skg&#39;s Blog</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 05 May 2024 19:29:38 &#43;0800</lastBuildDate><atom:link href="//localhost:1313/tags/wp/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 06 May 2024 09:30:21 &#43;0800</lastBuildDate><atom:link href="/tags/wp/" rel="self" type="application/rss+xml" /><item>
+  <title>2024年第七届天一永安杯宁波市赛初赛WP</title>
+  <link>/posts/3ccf1dc/</link>
+  <pubDate>Mon, 06 May 2024 09:30:21 &#43;0800</pubDate>
+  <author>作者</author>
+  <guid>/posts/3ccf1dc/</guid>
+  <description><![CDATA[1 Web 1.1 web-1正常网页访问无法得到 flag ，因为有弹窗一直阻塞，所以用 curl 命令即可 curl -i http://ip:port 1.2 web-2看到网页源代码中的发送方法，是拼接了 xxe flag 在 /flag 下]]></description>
+</item>
+<item>
   <title>2023年第三届陕西省大学生网络安全技能大赛WP</title>
-  <link>//localhost:1313/posts/edebc43/</link>
+  <link>/posts/edebc43/</link>
   <pubDate>Sun, 05 May 2024 19:29:38 &#43;0800</pubDate>
   <author>作者</author>
-  <guid>//localhost:1313/posts/edebc43/</guid>
+  <guid>/posts/edebc43/</guid>
   <description><![CDATA[1 排名 2 解题思路 2.1 WEB 2.1.1 easyrce过滤了一些东西，用 file 伪协议即可 http://1d99bce9.clsadp.com/?PK=file:/]]></description>
 </item>
 <item>
   <title>2023MoeCTF Reverse WP</title>
-  <link>//localhost:1313/posts/54f90da/</link>
+  <link>/posts/54f90da/</link>
   <pubDate>Sun, 05 May 2024 19:22:12 &#43;0800</pubDate>
   <author>作者</author>
-  <guid>//localhost:1313/posts/54f90da/</guid>
+  <guid>/posts/54f90da/</guid>
   <description><![CDATA[1 Reverse入门指北 INTRO_RE.exe 使用 ida 打开，调用 F12 查看字符串即可 moectf{F1rst_St3p_1s_D0ne} 2 base_64 base64.pyc 考的是 python 的逆向，需要将 .pyc 文件进行反编译 使用工具 uncompyle6 将 .pyc 文件反编译为 py 文件即可]]></description>
 </item>
 <item>
   <title>2023NewStarCTF Week1 WP(Reverse)</title>
-  <link>//localhost:1313/posts/89d59c3/</link>
+  <link>/posts/89d59c3/</link>
   <pubDate>Wed, 20 Mar 2024 11:08:45 &#43;0800</pubDate>
   <author>作者</author>
-  <guid>//localhost:1313/posts/89d59c3/</guid>
+  <guid>/posts/89d59c3/</guid>
   <description><![CDATA[前段时间参加了NewStarCTF的比赛，赛制是每个礼拜上一周的新题。由于前段时间比较忙，所以没怎么看，现在空下来，来复现一下，同时提升自己]]></description>
 </item>
 </channel>
