@@ -188,7 +188,14 @@
     <li><a href="#咳">咳</a></li>
   </ul>
 </nav></div>
-      </div><div class="content" id="content"><p>前段时间参加了NewStarCTF的比赛，赛制是每个礼拜上一周的新题。由于前段时间比较忙，所以没怎么看，现在空下来，来复现一下，同时提升自己的逆向能力</p>
+      </div><div class="content" id="content"><div class="details admonition warning open">
+      <div class="details-summary admonition-title">
+        <i class="icon fa-solid fa-exclamation-triangle fa-fw" aria-hidden="true"></i>警告<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+      </div>
+      <div class="details-content">
+        <div class="admonition-content">本文最后更新于 2024-03-20，文中内容可能已过时。</div>
+      </div>
+    </div><p>前段时间参加了NewStarCTF的比赛，赛制是每个礼拜上一周的新题。由于前段时间比较忙，所以没怎么看，现在空下来，来复现一下，同时提升自己的逆向能力</p>
 <h2 id="androxor" class="heading-element">
   <a href="#androxor" class="heading-mark"></a>1 AndroXor</h2><p>使用 <code>jadx</code> 工具反编译 <code>APK</code> 文件，具体的代码包在 <code>com.chick.androxor</code> 中，且具体的加密代码如下</p>
 <div class="highlight" id="id-1"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">Xor</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">str2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">

