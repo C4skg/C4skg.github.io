@@ -3,9 +3,17 @@
     <title>C4skg&#39;s Blog</title>
     <link>/</link>
     <description>个人博客</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 10 Nov 2024 21:11:28 &#43;0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 17 Dec 2024 19:25:40 &#43;0800</lastBuildDate>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>2024年第十八届全国大学生信息安全竞赛（长城杯）WP</title>
+  <link>/posts/8ead8f3/</link>
+  <pubDate>Tue, 17 Dec 2024 19:25:40 &#43;0800</pubDate>
+  <author>作者</author>
+  <guid>/posts/8ead8f3/</guid>
+  <description><![CDATA[最终总榜 33 web 题这次只能说一言难尽吧 1 WEB 1.1 Safe_Proxy不太明白那个 socket 的代理具体是做什么的，可能技术不够吧，最后另辟蹊径，通过判断 post 请求]]></description>
+</item>
+<item>
   <title>第七届浙江省大学生网络与信息安全竞赛决赛WP</title>
   <link>/posts/5a1f13a3088db7e24b55207320a2fda9/</link>
   <pubDate>Sun, 10 Nov 2024 21:11:28 &#43;0800</pubDate>
